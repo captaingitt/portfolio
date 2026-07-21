@@ -171,18 +171,9 @@
       letter-spacing:-.04em;
     }
 
-    .desktop-title{
-      display:block;
-    }
-
-    .desktop-title .hero-title-line{
-      display:block;
-      white-space:nowrap;
-    }
-
-    .mobile-title{
-      display:none;
-    }
+    .desktop-title{display:block;}
+    .desktop-title .hero-title-line{display:block;white-space:nowrap;}
+    .mobile-title{display:none;}
 
     .lead{
       font-size:18px;
@@ -608,17 +599,18 @@
 
     .gallery-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:12px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:14px;
       margin-top:16px;
     }
 
     .gallery-card{
       overflow:hidden;
-      min-height:180px;
       display:flex;
       flex-direction:column;
       background:linear-gradient(180deg,#fff,var(--card-soft));
+      border-radius:20px;
+      border:1px solid var(--line);
     }
 
     .gallery-card img{
@@ -709,18 +701,11 @@
         font-size:20px;
       }
 
-      .cta{
-        flex-direction:column;
-      }
-
+      .cta{flex-direction:column;}
       .btn{width:100%;}
 
       .hero-aside{
         min-height:auto;
-        padding:16px;
-      }
-
-      .aside-card{
         padding:16px;
       }
 
@@ -752,6 +737,7 @@
   </div>
 
   <main class="wrap">
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-grid">
         <div class="hero-card">
@@ -844,6 +830,7 @@
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about">
       <div class="section accent-section about">
         <div class="title"><h2>Обо мне</h2></div>
@@ -853,6 +840,7 @@
       </div>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills">
       <div class="section">
         <div class="title"><h2>Ключевые компетенции</h2></div>
@@ -865,11 +853,11 @@
       </div>
     </section>
 
+    <!-- CASES -->
     <section id="cases">
       <div class="section accent-section">
         <div class="title"><h2>Избранные кейсы</h2></div>
         <div class="cases">
-
           <!-- 1. Сбер GenAI -->
           <article class="case">
             <div class="case-head">
@@ -907,14 +895,16 @@
                 <div>
                   <b>Материалы проекта</b>
                   <div class="project-links">
-                    <a href="https://drive.google.com/file/d/1fVZ_fpFBDoqUVoK_qemfkOe9lYq_lJNp/view" target="_blank" rel="noopener noreferrer">Открыть бриф продукта</a>
+                    <a href="https://drive.google.com/file/d/1fVZ_fpFBDoqUVoK_qemfkOe9lYq_lJNp/view" target="_blank" rel="noopener noreferrer">
+                      Открыть бриф продукта
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- 2. Авито платформа обратной связи -->
+          <!-- 2. Авито -->
           <article class="case">
             <div class="case-head">
               <div>
@@ -946,17 +936,11 @@
                     <li>Повышение вовлечённости за счёт игрового формата</li>
                   </ul>
                 </div>
-                <div>
-                  <b>Материалы проекта</b>
-                  <div class="project-links">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Кейс Авито (скоро)</a>
-                  </div>
-                </div>
               </div>
             </div>
           </article>
 
-          <!-- 3. Курс "Оплата труда" -->
+          <!-- 3. Оплата труда -->
           <article class="case">
             <div class="case-head">
               <div>
@@ -969,7 +953,7 @@
               <div class="case-col">
                 <div>
                   <b>Контекст и&nbsp;задача</b>
-                  <p>Перевести сложную тему оплаты труда из&nbsp;«сухой теории» в&nbsp;понятную практику, где участники действительно учатся считать и&nbsp;понимать систему.</p>
+                  <p>Перевести сложную тему оплаты труда из&nbsp;теории в&nbsp;понятную практику с&nbsp;расчётами и&nbsp;применением к&nbsp;реальным сценариям.</p>
                 </div>
                 <div>
                   <b>Что сделано</b>
@@ -984,15 +968,9 @@
                 <div>
                   <b>Результат работы</b>
                   <ul>
-                    <li>Участники стали меньше бояться темы расчётов</li>
-                    <li>Повышение точности выполнения заданий по&nbsp;данным симулятора</li>
+                    <li>Участники перестали бояться темы расчётов</li>
+                    <li>Повысилась точность выполнения заданий по&nbsp;данным симулятора</li>
                   </ul>
-                </div>
-                <div>
-                  <b>Материалы проекта</b>
-                  <div class="project-links">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Описание проекта «Оплата труда» (скоро)</a>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1027,14 +1005,8 @@
                   <b>Результат работы</b>
                   <ul>
                     <li>92% участников завершили воркшоп</li>
-                    <li>Позитивная оценка применимости материалов от&nbsp;студентов</li>
+                    <li>Студенты отмечали прикладной характер материалов</li>
                   </ul>
-                </div>
-                <div>
-                  <b>Материалы проекта</b>
-                  <div class="project-links">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Описание курса (скоро)</a>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1053,7 +1025,7 @@
               <div class="case-col">
                 <div>
                   <b>Контекст и&nbsp;задача</b>
-                  <p>Показать участникам, как работать с&nbsp;требованиями и&nbsp;бизнес-логикой продукта через практику и&nbsp;игровые форматы.</p>
+                  <p>Научить участников работать с&nbsp;требованиями и&nbsp;бизнес-логикой продукта через практику и&nbsp;игровые форматы.</p>
                 </div>
                 <div>
                   <b>Что сделано</b>
@@ -1070,12 +1042,6 @@
                     <li>Команда под моим руководством выявила 12+ скрытых требований для&nbsp;сервиса доставки</li>
                     <li>Участники получили практический опыт работы с&nbsp;документацией</li>
                   </ul>
-                </div>
-                <div>
-                  <b>Материалы проекта</b>
-                  <div class="project-links">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Схемы BRD / Vision (скоро)</a>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1112,12 +1078,6 @@
                     <li>Студенты отмечали практическую пользу занятий</li>
                   </ul>
                 </div>
-                <div>
-                  <b>Материалы проекта</b>
-                  <div class="project-links">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Программа занятий (скоро)</a>
-                  </div>
-                </div>
               </div>
             </div>
           </article>
@@ -1150,21 +1110,15 @@
                 <div>
                   <b>Результат работы</b>
                   <ul>
-                    <li>Количество ошибок в&nbsp;материалах снизилось на&nbsp;20%</li>
-                    <li>Процесс редакции стал более предсказуемым</li>
+                    <li>Количество ошибок в&nbsp;материалах снизилось примерно на&nbsp;20%</li>
+                    <li>Процесс редакции стал более предсказуемым и&nbsp;структурированным</li>
                   </ul>
-                </div>
-                <div>
-                  <b>Материалы проекта</b>
-                  <div class="project-links">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Список изданий (скоро)</a>
-                  </div>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- 8. Лицей НИУ ВШЭ -->
+          <!-- 8. Лицей ВШЭ -->
           <article class="case">
             <div class="case-head">
               <div>
@@ -1184,7 +1138,7 @@
                   <ul>
                     <li>Спроектирован внеучебный проект и&nbsp;система проектной деятельности</li>
                     <li>Проведены занятия по&nbsp;проектному менеджменту</li>
-                    <li>Сопровождение социальных проектов учеников</li>
+                    <li>Сопровождала социальные проекты учеников</li>
                   </ul>
                 </div>
               </div>
@@ -1196,12 +1150,6 @@
                     <li>Участники отмечали рост уверенности и&nbsp;умения работать в&nbsp;команде</li>
                   </ul>
                 </div>
-                <div>
-                  <b>Материалы проекта</b>
-                  <div class="project-links">
-                    <a href="#" target="_blank" rel="noopener noreferrer">Описание программы (скоро)</a>
-                  </div>
-                </div>
               </div>
             </div>
           </article>
@@ -1210,6 +1158,7 @@
       </div>
     </section>
 
+    <!-- GALLERY: все фото -->
     <section id="gallery">
       <div class="section">
         <div class="title"><h2>Изображения и&nbsp;материалы</h2></div>
@@ -1219,37 +1168,63 @@
             <div class="cap">GenAI для&nbsp;экспертов — экран курса и&nbsp;логика модуля</div>
           </div>
           <div class="gallery-card">
+            <img src="images/genai-2.jpg" alt="Фрагмент интерфейса GenAI курса" width="1200" height="675" loading="lazy">
+            <div class="cap">Фрагмент интерфейса курса по&nbsp;генеративному ИИ</div>
+          </div>
+          <div class="gallery-card">
             <img src="images/diploma.jpg" alt="Диплом победителя" width="1200" height="675" loading="lazy">
             <div class="cap">Диплом победителя — подтверждение участия и&nbsp;результата</div>
           </div>
           <div class="gallery-card">
             <img src="images/mts-1.jpg" alt="Процесс работы по МТС Диджитал" width="1200" height="675" loading="lazy">
-            <div class="cap">МТС Диджитал — комментарии и&nbsp;процесс вычитки</div>
+            <div class="cap">МТС Диджитал — комментарии и&nbsp;процесс вычитки образовательного контента</div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/vk.jpg" alt="Материалы исследования для VK Education" width="1200" height="675" loading="lazy">
+            <div class="cap">VK Education — выдержки из&nbsp;исследования EdTech-рынка и&nbsp;аудитории</div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/liceum.jpg" alt="Проектная работа школьников лицея" width="1200" height="675" loading="lazy">
+            <div class="cap">Лицей НИУ ВШЭ — защита школьных проектов</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- REVIEWS: полные -->
     <section id="reviews">
       <div class="section accent-section">
         <div class="title"><h2>Отзывы заказчиков</h2></div>
         <div class="quotes">
           <div class="quote">
-            <p>«Список конкурентов очень помог при&nbsp;проектировании онлайн-практики»</p>
-            <div class="who">Кирилл Богатырёв · VK Education</div>
+            <p>
+              «Катя сделала для нас исследование конкурентных практик и подробно разложила, как устроены онлайн‑курсы и практика у игроков рынка.
+              Список конкурентов и сравнительная таблица очень помогли при проектировании нашей онлайн‑практики: мы понимали, что уже есть на рынке,
+              и могли принимать более осознанные продуктовые решения.»
+            </p>
+            <div class="who">Кирилл Богатырёв, руководитель направления · VK Education</div>
           </div>
           <div class="quote">
-            <p>«Катя показала высокий уровень ответственности и&nbsp;внимательности»</p>
-            <div class="who">Альбина Гарифуллина · МТС Диджитал</div>
+            <p>
+              «Катя показала высокий уровень ответственности и внимательности. Она аккуратно работала с контентом,
+              вовремя задавала уточняющие вопросы и предлагала улучшения по структуре и формулировкам.
+              В результате курс стал понятнее для студентов, а мы получили качественный контент в срок.»
+            </p>
+            <div class="who">Альбина Гарифуллина, руководитель направления · МТС Диджитал</div>
           </div>
           <div class="quote">
-            <p>«Ключевая фишка — перевод скучной темы в&nbsp;интерактивные расчёты»</p>
-            <div class="who">Отзыв по&nbsp;кейсу «Оплата труда»</div>
+            <p>
+              «Ключевая фишка проекта — перевод скучной темы оплаты труда в интерактивные расчёты и понятные задания.
+              Благодаря симулятору и системе формирующих заданий участники наконец-то начали разбираться в теме,
+              а не просто запоминать формулы.»
+            </p>
+            <div class="who">Заказчик курса «Оплата труда» · корпоративный образовательный проект</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience">
       <div class="section">
         <div class="title"><h2>Опыт и&nbsp;образование</h2></div>
@@ -1277,6 +1252,7 @@
       </div>
     </section>
 
+    <!-- RESUME -->
     <section id="resume">
       <div class="section">
         <div class="panel resume-panel">
@@ -1293,6 +1269,7 @@
       </div>
     </section>
 
+    <!-- CONTACTS -->
     <section id="contacts">
       <div class="section contact accent-section">
         <div class="panel">

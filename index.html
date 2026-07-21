@@ -26,7 +26,7 @@
       --accent-soft:#e4f4e9;
       --accent-soft-2:#d6efde;
 
-      --shadow:0 12px 34px rgba(30, 72, 48, .08);
+      --shadow:0 12px 34px rgba(30,72,48,.08);
       --shadow-soft:0 8px 24px rgba(47,125,87,.10);
 
       --radius:24px;
@@ -153,6 +153,7 @@
       align-items:center;
       gap:8px;
       width:max-content;
+      max-width:100%;
       padding:10px 14px;
       border-radius:999px;
       background:linear-gradient(135deg,var(--accent-soft),var(--accent-soft-2));
@@ -263,62 +264,78 @@
       gap:16px;
     }
 
-    .portrait{
+    .hero-aside{
       min-height:280px;
       border-radius:28px;
       background:
-        radial-gradient(circle at 80% 25%, rgba(255,255,255,.18), transparent 28%),
-        radial-gradient(circle at 20% 85%, rgba(255,255,255,.14), transparent 24%),
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,.18), transparent 28%),
+        radial-gradient(circle at 14% 82%, rgba(255,255,255,.14), transparent 24%),
         linear-gradient(160deg,#1e5a3f 0%, #2f7d57 42%, #78b98e 100%);
       position:relative;
       overflow:hidden;
+      padding:22px;
+      display:grid;
+      align-content:end;
     }
 
-    .portrait:before,
-    .portrait:after{
+    .hero-aside::before,
+    .hero-aside::after{
       content:"";
       position:absolute;
       border-radius:50%;
     }
 
-    .portrait:before{
+    .hero-aside::before{
       width:300px;
       height:300px;
-      background:rgba(255,255,255,.16);
+      background:rgba(255,255,255,.14);
       right:-80px;
       top:-60px;
     }
 
-    .portrait:after{
+    .hero-aside::after{
       width:220px;
       height:220px;
-      background:rgba(255,255,255,.12);
+      background:rgba(255,255,255,.10);
       left:-60px;
       bottom:-70px;
     }
 
-    .portrait .chip{
-      position:absolute;
-      left:20px;
-      right:20px;
-      bottom:20px;
+    .aside-card{
+      position:relative;
+      z-index:1;
       background:rgba(255,255,255,.14);
       color:#fff;
       border:1px solid rgba(255,255,255,.24);
-      padding:14px 16px;
-      border-radius:18px;
+      padding:18px;
+      border-radius:20px;
       backdrop-filter:blur(8px);
     }
 
-    .portrait .chip strong{
-      display:block;
-      font-size:18px;
-      margin-bottom:4px;
+    .aside-card h3{
+      margin:0 0 12px;
+      font-size:20px;
+      line-height:1.2;
     }
 
-    .portrait .chip span{
+    .aside-points{
+      display:grid;
+      gap:10px;
+    }
+
+    .aside-points div{
+      display:grid;
+      grid-template-columns:110px 1fr;
+      gap:10px;
+      align-items:start;
       font-size:14px;
-      opacity:.95;
+      line-height:1.45;
+    }
+
+    .aside-points b{
+      color:#eefbf1;
+      font-size:13px;
+      letter-spacing:.01em;
     }
 
     .quick{
@@ -589,42 +606,6 @@
       font-weight:700;
     }
 
-    details{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:14px 16px;
-    }
-
-    details[open]{
-      background:linear-gradient(180deg,var(--accent-soft),#fff);
-      border-color:var(--line-strong);
-    }
-
-    summary{
-      cursor:pointer;
-      font-weight:700;
-      color:var(--text);
-      list-style:none;
-      line-height:1.4;
-    }
-
-    summary::-webkit-details-marker{display:none}
-
-    .extra-list{
-      display:grid;
-      gap:12px;
-      margin-top:14px;
-    }
-
-    .extra-item{
-      padding:14px 16px;
-      border:1px solid var(--line);
-      border-radius:16px;
-      background:#fcfefd;
-      margin-top:12px;
-    }
-
     .gallery-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -698,9 +679,7 @@
         padding:20px;
       }
 
-      .eyebrow{
-        margin-bottom:14px;
-      }
+      .eyebrow{margin-bottom:14px;}
 
       h1{
         font-size:clamp(30px, 10vw, 42px);
@@ -734,18 +713,15 @@
         flex-direction:column;
       }
 
-      .btn{
-        width:100%;
+      .btn{width:100%;}
+
+      .hero-aside{
+        min-height:auto;
+        padding:16px;
       }
 
-      .portrait{
-        min-height:220px;
-      }
-
-      .portrait .chip{
-        left:14px;
-        right:14px;
-        bottom:14px;
+      .aside-card{
+        padding:16px;
       }
 
       .gallery-card img{
@@ -822,10 +798,27 @@
         </div>
 
         <div class="hero-visual hero-card">
-          <div class="portrait">
-            <div class="chip">
-              <strong>Методист образовательных программ</strong>
-              <span>Проектирую курсы, треки и&nbsp;обучающие кампании для&nbsp;IT, EdTech и&nbsp;корпораций</span>
+          <div class="hero-aside">
+            <div class="aside-card">
+              <h3>Чем я полезна командам</h3>
+              <div class="aside-points">
+                <div>
+                  <b>Для кого</b>
+                  <span>IT-команды, корпоративные университеты, EdTech-проекты, внутренние эксперты</span>
+                </div>
+                <div>
+                  <b>Что делаю</b>
+                  <span>Проектирую программы, треки, практику, обучающие кампании и&nbsp;методическую логику продукта</span>
+                </div>
+                <div>
+                  <b>Как работаю</b>
+                  <span>Через исследования, данные, интервью, обратную связь и&nbsp;сборку решений под реальные бизнес-задачи</span>
+                </div>
+                <div>
+                  <b>На выходе</b>
+                  <span>Понятный образовательный продукт, который можно запускать, измерять и&nbsp;масштабировать</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -876,6 +869,8 @@
       <div class="section accent-section">
         <div class="title"><h2>Избранные кейсы</h2></div>
         <div class="cases">
+
+          <!-- 1. Сбер GenAI -->
           <article class="case">
             <div class="case-head">
               <div>
@@ -919,37 +914,298 @@
             </div>
           </article>
 
+          <!-- 2. Авито платформа обратной связи -->
           <article class="case">
             <div class="case-head">
               <div>
-                <span class="tag">2 · Дополнительно</span>
-                <h3>Другие проекты</h3>
+                <span class="tag">2 · Авито</span>
+                <h3>Платформа для&nbsp;культуры обратной связи</h3>
+                <p class="muted">Асинхронная образовательная визуальная новелла в&nbsp;LMS для&nbsp;распределённых команд</p>
               </div>
             </div>
-
-            <div class="extra-list">
-              <details>
-                <summary>Кейс от&nbsp;Авито по&nbsp;созданию платформы для&nbsp;обучения сотрудников культуре обратной связи</summary>
-                <div class="extra-item">
-                  <div class="muted">Асинхронная образовательная визуальная новелла в&nbsp;LMS для&nbsp;формирования культуры обратной связи у&nbsp;распределённых команд.</div>
+            <div class="case-columns">
+              <div class="case-col">
+                <div>
+                  <b>Контекст и&nbsp;задача</b>
+                  <p>Поддержать развитие культуры обратной связи в&nbsp;компании с&nbsp;распределёнными командами и&nbsp;разным уровнем вовлечённости.</p>
                 </div>
-              </details>
-
-              <details>
-                <summary>MVP образовательного курса по&nbsp;возрастной психологии</summary>
-                <div class="extra-item">
-                  <div class="muted">Онлайн-воркшоп для&nbsp;студентов непрофильных специальностей: модули, кейс-симуляции, интерактивная инфографика и&nbsp;TG-бот для&nbsp;обратной связи.</div>
+                <div>
+                  <b>Что сделано</b>
+                  <ul>
+                    <li>Разработана визуальная новелла с&nbsp;сюжетами, близкими к&nbsp;реальным ситуациям сотрудников</li>
+                    <li>Созданы ветвящиеся сценарии с&nbsp;вариативными исходами</li>
+                    <li>Встроены задания с&nbsp;автопроверкой и&nbsp;peer-to-peer оценкой</li>
+                  </ul>
                 </div>
-              </details>
-
-              <details>
-                <summary>ПЕТ-проекты по&nbsp;разработке и&nbsp;бизнес-анализу в&nbsp;Школе&nbsp;21</summary>
-                <div class="extra-item">
-                  <div class="muted">Работа с&nbsp;BRD, Vision-документами, ролевыми моделями и&nbsp;выявлением скрытых требований.</div>
+              </div>
+              <div class="case-col">
+                <div>
+                  <b>Результат работы</b>
+                  <ul>
+                    <li>Рост понимания принципов конструктивной обратной связи</li>
+                    <li>Повышение вовлечённости за счёт игрового формата</li>
+                  </ul>
                 </div>
-              </details>
+                <div>
+                  <b>Материалы проекта</b>
+                  <div class="project-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer">Кейс Авито (скоро)</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </article>
+
+          <!-- 3. Курс "Оплата труда" -->
+          <article class="case">
+            <div class="case-head">
+              <div>
+                <span class="tag">3 · «Оплата труда»</span>
+                <h3>Система измерений для&nbsp;кандидатов в&nbsp;стюарды</h3>
+                <p class="muted">Практический курс с&nbsp;формирующими заданиями и&nbsp;обратной связью</p>
+              </div>
+            </div>
+            <div class="case-columns">
+              <div class="case-col">
+                <div>
+                  <b>Контекст и&nbsp;задача</b>
+                  <p>Перевести сложную тему оплаты труда из&nbsp;«сухой теории» в&nbsp;понятную практику, где участники действительно учатся считать и&nbsp;понимать систему.</p>
+                </div>
+                <div>
+                  <b>Что сделано</b>
+                  <ul>
+                    <li>Разработана система из&nbsp;16 формирующих заданий</li>
+                    <li>Создан симулятор расчёта зарплаты с&nbsp;мгновенной обратной связью</li>
+                    <li>Настроены метрики P/D/rpb для&nbsp;оценки качества заданий</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="case-col">
+                <div>
+                  <b>Результат работы</b>
+                  <ul>
+                    <li>Участники стали меньше бояться темы расчётов</li>
+                    <li>Повышение точности выполнения заданий по&nbsp;данным симулятора</li>
+                  </ul>
+                </div>
+                <div>
+                  <b>Материалы проекта</b>
+                  <div class="project-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer">Описание проекта «Оплата труда» (скоро)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Возрастная психология -->
+          <article class="case">
+            <div class="case-head">
+              <div>
+                <span class="tag">4 · Возрастная психология</span>
+                <h3>MVP образовательного курса</h3>
+                <p class="muted">Онлайн-воркшоп для&nbsp;студентов непрофильных специальностей</p>
+              </div>
+            </div>
+            <div class="case-columns">
+              <div class="case-col">
+                <div>
+                  <b>Контекст и&nbsp;задача</b>
+                  <p>Сделать сложную теорию возрастной психологии понятной и&nbsp;применимой для&nbsp;студентов, для&nbsp;которых это не&nbsp;профильная дисциплина.</p>
+                </div>
+                <div>
+                  <b>Что сделано</b>
+                  <ul>
+                    <li>Спроектировано 2&nbsp;модуля с&nbsp;кейс-симуляциями</li>
+                    <li>Добавлена интерактивная инфографика</li>
+                    <li>Настроен Telegram-бот для&nbsp;обратной связи</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="case-col">
+                <div>
+                  <b>Результат работы</b>
+                  <ul>
+                    <li>92% участников завершили воркшоп</li>
+                    <li>Позитивная оценка применимости материалов от&nbsp;студентов</li>
+                  </ul>
+                </div>
+                <div>
+                  <b>Материалы проекта</b>
+                  <div class="project-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer">Описание курса (скоро)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Школа 21 -->
+          <article class="case">
+            <div class="case-head">
+              <div>
+                <span class="tag">5 · Школа&nbsp;21</span>
+                <h3>ПЕТ-проекты по&nbsp;разработке и&nbsp;бизнес-анализу</h3>
+                <p class="muted">Работа с&nbsp;BRD, Vision-документами и&nbsp;ролевыми моделями</p>
+              </div>
+            </div>
+            <div class="case-columns">
+              <div class="case-col">
+                <div>
+                  <b>Контекст и&nbsp;задача</b>
+                  <p>Показать участникам, как работать с&nbsp;требованиями и&nbsp;бизнес-логикой продукта через практику и&nbsp;игровые форматы.</p>
+                </div>
+                <div>
+                  <b>Что сделано</b>
+                  <ul>
+                    <li>Организованы ролевые игры по&nbsp;выявлению требований</li>
+                    <li>Разработаны шаблоны BRD и&nbsp;Vision для&nbsp;PET-проектов</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="case-col">
+                <div>
+                  <b>Результат работы</b>
+                  <ul>
+                    <li>Команда под моим руководством выявила 12+ скрытых требований для&nbsp;сервиса доставки</li>
+                    <li>Участники получили практический опыт работы с&nbsp;документацией</li>
+                  </ul>
+                </div>
+                <div>
+                  <b>Материалы проекта</b>
+                  <div class="project-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer">Схемы BRD / Vision (скоро)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. СберОбразование -->
+          <article class="case">
+            <div class="case-head">
+              <div>
+                <span class="tag">6 · СберОбразование</span>
+                <h3>Преподавание soft skills</h3>
+                <p class="muted">Интерактивные занятия для&nbsp;магистрантов с&nbsp;кейсами и&nbsp;практикой</p>
+              </div>
+            </div>
+            <div class="case-columns">
+              <div class="case-col">
+                <div>
+                  <b>Контекст и&nbsp;задача</b>
+                  <p>Сделать занятия по&nbsp;soft skills для&nbsp;магистрантов живыми и&nbsp;практическими, а не&nbsp;теоретическими лекциями.</p>
+                </div>
+                <div>
+                  <b>Что сделано</b>
+                  <ul>
+                    <li>Проведены занятия с&nbsp;кейсами и&nbsp;ролевыми моделями</li>
+                    <li>Добавлены задания на&nbsp;рефлексию и&nbsp;обратную связь</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="case-col">
+                <div>
+                  <b>Результат работы</b>
+                  <ul>
+                    <li>Вовлечённость выросла до&nbsp;90% по&nbsp;статистике платформы</li>
+                    <li>Студенты отмечали практическую пользу занятий</li>
+                  </ul>
+                </div>
+                <div>
+                  <b>Материалы проекта</b>
+                  <div class="project-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer">Программа занятий (скоро)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Юрайт -->
+          <article class="case">
+            <div class="case-head">
+              <div>
+                <span class="tag">7 · Юрайт</span>
+                <h3>Методическое сопровождение учебников</h3>
+                <p class="muted">Курирование подготовки 60+ изданий и&nbsp;обучение новых сотрудников</p>
+              </div>
+            </div>
+            <div class="case-columns">
+              <div class="case-col">
+                <div>
+                  <b>Контекст и&nbsp;задача</b>
+                  <p>Обеспечить качество учебных материалов и&nbsp;процесс работы редакции через методическое сопровождение.</p>
+                </div>
+                <div>
+                  <b>Что сделано</b>
+                  <ul>
+                    <li>Курировала подготовку 60+ учебников и&nbsp;пособий</li>
+                    <li>Обучала новых сотрудников работе с&nbsp;материалами</li>
+                    <li>Внедрила систему проверки контента</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="case-col">
+                <div>
+                  <b>Результат работы</b>
+                  <ul>
+                    <li>Количество ошибок в&nbsp;материалах снизилось на&nbsp;20%</li>
+                    <li>Процесс редакции стал более предсказуемым</li>
+                  </ul>
+                </div>
+                <div>
+                  <b>Материалы проекта</b>
+                  <div class="project-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer">Список изданий (скоро)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Лицей НИУ ВШЭ -->
+          <article class="case">
+            <div class="case-head">
+              <div>
+                <span class="tag">8 · Лицей НИУ ВШЭ</span>
+                <h3>Проектная деятельность для&nbsp;школьников</h3>
+                <p class="muted">Внеучебный проект и&nbsp;система проектной работы с&nbsp;обучением PM</p>
+              </div>
+            </div>
+            <div class="case-columns">
+              <div class="case-col">
+                <div>
+                  <b>Контекст и&nbsp;задача</b>
+                  <p>Дать школьникам опыт проектной работы и&nbsp;управления социальными инициативами.</p>
+                </div>
+                <div>
+                  <b>Что сделано</b>
+                  <ul>
+                    <li>Спроектирован внеучебный проект и&nbsp;система проектной деятельности</li>
+                    <li>Проведены занятия по&nbsp;проектному менеджменту</li>
+                    <li>Сопровождение социальных проектов учеников</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="case-col">
+                <div>
+                  <b>Результат работы</b>
+                  <ul>
+                    <li>Школьники доводили свои проекты до&nbsp;защиты</li>
+                    <li>Участники отмечали рост уверенности и&nbsp;умения работать в&nbsp;команде</li>
+                  </ul>
+                </div>
+                <div>
+                  <b>Материалы проекта</b>
+                  <div class="project-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer">Описание программы (скоро)</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>

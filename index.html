@@ -4,612 +4,147 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Екатерина Гитт — Методист образовательных программ</title>
-  <meta name="description" content="Портфолио Екатерины Гитт — методист образовательных программ, проектирование образовательных продуктов, EdTech, IT и корпоративное обучение." />
+  <meta
+    name="description"
+    content="Портфолио Екатерины Гитт — методист образовательных программ, проектирование образовательных продуктов, EdTech, IT и корпоративное обучение"
+  />
   <style>
     :root{
-      --bg:#f6f7fb;
+      --bg:#f5f8f4;
       --card:#ffffff;
-      --text:#1f2430;
-      --muted:#5d6578;
-      --line:#e6e9f2;
-      --accent:#6a5cff;
-      --accent2:#38bdf8;
-      --shadow:0 10px 30px rgba(27,39,94,.08);
+      --text:#1e2a24;
+      --muted:#5e6f66;
+      --line:#dfe9e2;
+      --accent:#2f7d57;
+      --accent-2:#72b88b;
+      --accent-soft:#e9f5ee;
+      --shadow:0 10px 30px rgba(31,67,48,.08);
       --radius:24px;
+      --radius-sm:18px;
+      --max:1180px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:
-        radial-gradient(1200px 600px at 10% 0%,rgba(106,92,255,.10),transparent 60%),
-        radial-gradient(900px 500px at 90% 10%,rgba(56,189,248,.12),transparent 50%),
-        var(--bg);
       color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% 0%,rgba(47,125,87,.10),transparent 60%),
+        radial-gradient(900px 500px at 90% 10%,rgba(114,184,139,.14),transparent 50%),
+        var(--bg);
       line-height:1.55;
     }
+
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 20px;
+    }
+
     .nav{
-      position:sticky;top:0;z-index:20;
-      backdrop-filter:blur(16px);
-      background:rgba(246,247,251,.78);
-      border-bottom:1px solid rgba(230,233,242,.75);
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter:blur(14px);
+      background:rgba(245,248,244,.86);
+      border-bottom:1px solid rgba(223,233,226,.9);
     }
+
     .nav .inner{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:16px 0;
     }
-    .brand{font-weight:800;letter-spacing:.2px}
-    .menu{display:flex;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:14px}
+
+    .brand{
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .menu{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
     .menu a:hover{color:var(--text)}
-    .hero{padding:42px 0 26px}
+
+    .hero{
+      padding:42px 0 24px;
+    }
+
     .hero-grid{
       display:grid;
-      grid-template-columns:1.15fr .85fr;
+      grid-template-columns:1.12fr .88fr;
       gap:28px;
-      align-items:stretch
+      align-items:stretch;
     }
-    .hero-card,.panel,.section,.case,.quote,.gallery-card,.contact-box{
-      background:rgba(255,255,255,.82);
-      border:1px solid rgba(230,233,242,.9);
+
+    .hero-card,
+    .section,
+    .case,
+    .quote,
+    .gallery-card,
+    .panel{
+      background:rgba(255,255,255,.88);
+      border:1px solid rgba(223,233,226,.95);
       box-shadow:var(--shadow);
-      border-radius:var(--radius)
+      border-radius:var(--radius);
     }
+
     .hero-card{
       padding:34px;
       min-height:520px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      overflow:hidden;
-      position:relative
     }
+
     .eyebrow{
-      display:inline-flex;gap:8px;align-items:center;
-      padding:8px 12px;border-radius:999px;
-      background:rgba(106,92,255,.09);
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(47,125,87,.10);
       color:var(--accent);
-      font-size:13px;font-weight:700
+      font-size:13px;
+      font-weight:700;
     }
+
     h1{
       font-size:clamp(38px,5vw,62px);
-      line-height:1.02;
+      line-height:1.04;
       margin:18px 0 14px;
-      letter-spacing:-.04em
+      letter-spacing:-.04em;
     }
-    .lead{font-size:18px;color:var(--muted);max-width:720px}
-    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:14px 18px;border-radius:16px;font-weight:700;
-      border:1px solid transparent;transition:.2s ease
+
+    .hero-title-line{
+      display:block;
+      white-space:nowrap;
     }
-    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
-    .btn.secondary{background:#fff;border-color:var(--line)}
-    .btn:hover{transform:translateY(-1px)}
-    .hero-meta{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-      margin-top:26px
-    }
-    .meta{
-      padding:14px 16px;border-radius:18px;
-      background:rgba(255,255,255,.7);
-      border:1px solid var(--line)
-    }
-    .meta b{display:block;font-size:18px;margin-bottom:4px}
-    .hero-visual{padding:22px;display:grid;gap:16px}
-    .portrait{
-      min-height:280px;border-radius:28px;
-      background:linear-gradient(160deg,#2d2b54 0%,#674dff 42%,#31c3f5 100%);
-      position:relative;overflow:hidden
-    }
-    .portrait:before,.portrait:after{
-      content:"";position:absolute;border-radius:50%;filter:blur(2px)
-    }
-    .portrait:before{width:300px;height:300px;background:rgba(255,255,255,.16);right:-80px;top:-60px}
-    .portrait:after{width:220px;height:220px;background:rgba(255,255,255,.12);left:-60px;bottom:-70px}
-    .portrait .chip{
-      position:absolute;left:20px;bottom:20px;
-      background:rgba(255,255,255,.15);
-      color:#fff;border:1px solid rgba(255,255,255,.22);
-      padding:12px 14px;border-radius:16px;backdrop-filter:blur(8px);max-width:88%
-    }
-    .portrait .chip strong{display:block;font-size:18px;margin-bottom:4px}
-    .portrait .chip span{font-size:14px;opacity:.92}
-    .quick{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .quick .box{
-      padding:18px;border-radius:20px;background:#fff;border:1px solid var(--line)
-    }
-    .quick .box span{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
-    .quick .box b{font-size:16px}
-    section{padding:20px 0}
-    .section{padding:28px}
-    .title{
-      display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px
-    }
-    .title h2{margin:0;font-size:28px}
-    .title p{margin:0;color:var(--muted);max-width:680px}
-    .about p{margin:0;color:var(--text);font-size:17px}
-    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .skill{
-      padding:18px;border-radius:20px;background:#fff;border:1px solid var(--line)
-    }
-    .skill b{display:block;margin-bottom:6px}
-    .skill span{color:var(--muted);font-size:14px}
-    .cases{display:grid;gap:16px}
-    .case{padding:22px}
-    .case-head{
-      display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:flex-start
-    }
-    .case h3{margin:0 0 8px;font-size:22px}
-    .tag{
-      display:inline-flex;padding:7px 10px;border-radius:999px;
-      background:rgba(56,189,248,.12);color:#1176a8;font-size:13px;font-weight:700
-    }
-    .case-columns{
-      display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px
-    }
-    .case ul{margin:10px 0 0;padding-left:18px;color:var(--text)}
-    .case li{margin:7px 0}
-    .muted{color:var(--muted)}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
-    .stat{
-      padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:18px
-    }
-    .stat b{display:block;font-size:18px;margin-bottom:4px}
-    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .quote{
-      padding:18px
-    }
-    .quote p{margin:0 0 14px}
-    .quote .who{color:var(--muted);font-size:14px}
-    .timeline{display:grid;gap:12px}
-    .item{
-      padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:#fff;
-      display:flex;justify-content:space-between;gap:12px;align-items:flex-start
-    }
-    .item b{display:block;margin-bottom:4px}
-    .item span{color:var(--muted)}
-    .footer{padding:30px 0 44px;color:var(--muted)}
-    .contact{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:18px
-    }
-    .panel{padding:22px}
-    .links{display:grid;gap:10px;margin-top:10px}
-    .links a{color:var(--accent);font-weight:700}
-    details{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:14px 16px;
-    }
-    summary{
-      cursor:pointer;
-      font-weight:700;
-      color:var(--text);
-      list-style:none;
-    }
-    summary::-webkit-details-marker{display:none}
-    .extra-list{
-      display:grid;
-      gap:12px;
-      margin-top:14px
-    }
-    .extra-item{
-      padding:14px 16px;
-      border:1px solid var(--line);
-      border-radius:16px;
-      background:#fcfdff
-    }
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:12px;
-      margin-top:16px
-    }
-    .gallery-card{
-      overflow:hidden;
-      min-height:180px;
-      display:flex;
-      flex-direction:column
-    }
-    .gallery-card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      background:#eef2ff
-    }
-    .gallery-card .cap{
-      padding:12px 14px;
+
+    .lead{
+      font-size:18px;
       color:var(--muted);
-      font-size:14px
+      max-width:720px;
     }
-    @media (max-width:980px){
-      .hero-grid,.case-columns,.grid-4,.quotes,.contact,.stats{grid-template-columns:1fr 1fr}
-      .hero-card{min-height:auto}
-      .hero-meta{grid-template-columns:1fr}
-      .quick{grid-template-columns:1fr}
-      .menu{display:none}
+
+    .cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
     }
-    @media (max-width:720px){
-      .hero-grid,.case-columns,.grid-4,.quotes,.contact,.stats{grid-template-columns:1fr}
-      .hero-card{padding:24px}
-      .section{padding:20px}
-      .title{flex-direction:column;align-items:flex-start}
-      h1{font-size:38px}
-      .lead{font-size:16px}
-    }
-  </style>
-</head>
-<body>
-  <div class="nav">
-    <div class="wrap inner">
-      <div class="brand">Екатерина Гитт</div>
-      <div class="menu">
-        <a href="#about">Обо мне</a>
-        <a href="#skills">Навыки</a>
-        <a href="#cases">Кейсы</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#experience">Опыт</a>
-        <a href="#contacts">Контакты</a>
-      </div>
-    </div>
-  </div>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-card">
-          <div>
-            <div class="eyebrow">Методист образовательных программ · IT · EdTech · корпоративное обучение</div>
-            <h1>Проектирую образовательные продукты, которые работают на людей и бизнес.</h1>
-            <p class="lead">Я создаю курсы, треки и внутренние образовательные продукты на основе данных, обратной связи и реальных задач аудитории. Умею соединять методологию, контент, аналитику и запуск.</p>
-            <div class="cta">
-              <a class="btn primary" href="#cases">Смотреть кейсы</a>
-              <a class="btn secondary" href="#contacts">Связаться</a>
-            </div>
-          </div>
-          <div class="hero-meta">
-            <div class="meta"><b>5+ лет</b><span>в образовании и EdTech</span></div>
-            <div class="meta"><b>Sber · MTS · VK</b><span>корпоративные и продуктовые кейсы</span></div>
-            <div class="meta"><b>Data-driven</b><span>аналитика, измерения, улучшение</span></div>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="portrait">
-            <div class="chip"><strong>Екатерина Гитт</strong><span>Методист образовательных программ. Проектирую курсы, треки и обучающие кампании для IT, EdTech и корпораций.</span></div>
-          </div>
-          <div class="quick">
-            <div class="box"><span>Фокус</span><b>Образовательные продукты</b></div>
-            <div class="box"><span>Формат</span><b>Полный цикл</b></div>
-            <div class="box"><span>Город</span><b>Москва</b></div>
-            <div class="box"><span>Связь</span><b>@smitherg</b></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="section about">
-        <div class="title"><h2>Обо мне</h2></div>
-        <p>Здравствуйте! Меня зовут Екатерина, и мне нравится делать процесс обучения захватывающим. Через процесс анализа существующих и поиска новых инструментов я открываю для себя мир методики и новых технологий, который вдохновляет меня неустанно двигаться дальше. Верю, что сильный курс начинается с цифр и заканчивается эмоцией пользователя, покупающего следующий курс. Опыт прохождения различных курсов и тренингов помогает мне комплексно оценивать образовательные продукты и отмечать возможные трудности, с которыми могут сталкиваться разработчики на разных этапах, а также эффективно работать в кросс-функциональных командах. Люблю создавать, креативить и экспериментировать :)</p>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="section">
-        <div class="title"><h2>Ключевые компетенции</h2></div>
-        <div class="grid-4">
-          <div class="skill"><b>Педдизайн</b><span>Проектирование программ, треков и практики под цели бизнеса и аудитории.</span></div>
-          <div class="skill"><b>Аналитика</b><span>Data-driven подход, оценка качества обучения и улучшение на основе фидбека.</span></div>
-          <div class="skill"><b>EdTech / IT</b><span>Образовательные продукты для цифровых команд, внутренних экспертов и студентов.</span></div>
-          <div class="skill"><b>Геймификация</b><span>Вовлекающие форматы, интерактивные тексты, механики мотивации и удержания.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="cases">
-      <div class="section">
-        <div class="title"><h2>Избранные кейсы</h2></div>
-
-        <div class="cases">
-          <article class="case">
-            <div class="case-head">
-              <div>
-                <span class="tag">1 · Сбер</span>
-                <h3>GenAI для экспертов</h3>
-                <p class="muted">Куратор образовательного трека для внутренних экспертов по генеративному ИИ.</p>
-              </div>
-            </div>
-            <div class="case-columns">
-              <div>
-                <b>Контекст и задача</b>
-                <p>В рамках развития AI-направления в Сбере требовалось обучить группу внутренних экспертов работе с генеративными ИИ-инструментами. Задача: выстроить системный процесс, который учитывает обновления продуктов и разный уровень подготовки участников.</p>
-                <b>Что сделано</b>
-                <ul>
-                  <li>Собрана группа из 15+ экспертов — представителей разных команд, заинтересованных в GenAI.</li>
-                  <li>Проведено 3 потока двухчасовых лекций. Каждый поток дополнялся с учётом новых AI-релизов и изменений инструментов.</li>
-                  <li>Налажена связка «СберУниверситет — спикеры — участники». Координировались расписание, материалы, доступы и оргвопросы.</li>
-                  <li>После каждого потока собиралась обратная связь, по итогам которой программа корректировалась.</li>
-                  <li>Четвёртый, завершающий поток готовился с акцентом на практику и самостоятельную работу.</li>
-                </ul>
-              </div>
-              <div>
-                <b>Результат работы</b>
-                <ul>
-                  <li>Участники удовлетворены обучением, что подтверждено отзывами.</li>
-                  <li>Получилась готовая структура, которую можно масштабировать на другие группы.</li>
-                </ul>
-                <b>Навыки педагогического дизайна</b>
-                <ul>
-                  <li>Анализ потребностей аудитории.</li>
-                  <li>Проектирование модульной программы.</li>
-                  <li>Адаптация контента под обновления продукта.</li>
-                  <li>Сбор и использование обратной связи для улучшения курса.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-head">
-              <div>
-                <span class="tag">2 · Сбер</span>
-                <h3>Кампания по популяризации менторства на платформе ЕФС.ФЛ</h3>
-                <p class="muted">Разработка контент-стратегии и всех материалов кампании.</p>
-              </div>
-            </div>
-            <div class="case-columns">
-              <div>
-                <b>Контекст и задача</b>
-                <p>В компании обновилась платформа для менторства. Появились новые функции, изменился интерфейс. Сотрудники не понимали, зачем туда заходить, и не регистрировались. Нужно было в короткий срок — две недели — развернуть кампанию, которая снимет барьеры и приведёт людей.</p>
-                <b>Что сделано</b>
-                <ul>
-                  <li>Запущена креативная рубрика: серия интервью с действующими менторами.</li>
-                  <li>Внедрена система баллов за активность и разработаны интерактивные статьи с опросами и мини-играми.</li>
-                  <li>Проведены собеседования с 10 потенциальными менторами, четверо подтвердили участие и готовность выступать на мероприятиях.</li>
-                  <li>Созданы понятные гайды: как зарегистрироваться, что нажимать, какие новые кнопки появились.</li>
-                </ul>
-              </div>
-              <div>
-                <b>Результат работы</b>
-                <ul>
-                  <li>Сотрудники начали регистрироваться на платформе.</li>
-                  <li>Повысилась вовлечённость.</li>
-                  <li>Кампания превратила онбординг в лёгкую и понятную механику.</li>
-                </ul>
-                <b>Навыки педагогического дизайна</b>
-                <ul>
-                  <li>Геймификация обучения.</li>
-                  <li>Проектирование мотивационной системы.</li>
-                  <li>Создание вовлекающего контента.</li>
-                  <li>Быстрая разработка под сжатые сроки.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-head">
-              <div>
-                <span class="tag">3 · МТС Диджитал</span>
-                <h3>Оценка контента и улучшение образовательного опыта</h3>
-                <p class="muted">Методическая вычитка сценариев, проектирование образовательных результатов и подготовка документов для лицензирования.</p>
-              </div>
-            </div>
-            <div class="case-columns">
-              <div>
-                <b>Контекст и задача</b>
-                <p>Нужно было вычитать и улучшить сценарии асинхронных курсов, спроектировать образовательные результаты и подготовить документацию для получения образовательной лицензии.</p>
-                <b>Что сделано</b>
-                <ul>
-                  <li>Вычитано и улучшено 50+ сценариев видеоуроков.</li>
-                  <li>Контролировалась логика, структура, соответствие образовательным целям и таксономии Блума.</li>
-                  <li>Фиксировались ошибки в документах и сценариях курса.</li>
-                </ul>
-              </div>
-              <div>
-                <b>Результат работы</b>
-                <ul>
-                  <li>Сценарии стали готовы к записи без доработок.</li>
-                  <li>Все сценарии получили явную привязку к результатам обучения.</li>
-                </ul>
-                <b>Навыки педагогического дизайна</b>
-                <ul>
-                  <li>Методическая точность.</li>
-                  <li>Работа с качеством контента.</li>
-                  <li>Проектирование обучения под бизнес-задачу.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-head">
-              <div>
-                <span class="tag">4 · МТС Диджитал</span>
-                <h3>Корпоративное обучение iOS-разработчиков</h3>
-                <p class="muted">Методическая основа, образовательные результаты и практические задания.</p>
-              </div>
-            </div>
-            <div class="case-columns">
-              <div>
-                <b>Что сделано</b>
-                <ul>
-                  <li>70% заданий имитируют реальные задачи iOS-разработчиков.</li>
-                  <li>Предложены улучшения по структуре и вовлекаемости.</li>
-                  <li>Сценарии подготовлены к записи без доработок.</li>
-                </ul>
-              </div>
-              <div>
-                <b>Запрос заказчика</b>
-                <ul>
-                  <li>Разработать методическую основу для внутреннего обучения iOS-разработчиков.</li>
-                  <li>Спроектировать образовательные результаты по программе iOS-разработки.</li>
-                  <li>Спроектировать практические задания для образовательной программы.</li>
-                  <li>Подготовить документ программы для получения образовательной лицензии.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-head">
-              <div>
-                <span class="tag">5 · VK Education</span>
-                <h3>Анализ рынка онлайн-практики в EdTech</h3>
-                <p class="muted">Исследование рынка, конкурентов и аудитории для проектирования продукта.</p>
-              </div>
-            </div>
-            <div class="case-columns">
-              <div>
-                <b>Что сделано</b>
-                <ul>
-                  <li>Проведено исследование 60+ компаний и 10 интервью с HR.</li>
-                  <li>Выявлены боли работодателей и ожидания студентов.</li>
-                  <li>Сегментация и инсайты использованы в продукте VK Education.</li>
-                </ul>
-              </div>
-              <div>
-                <b>Результат работы</b>
-                <ul>
-                  <li>Получен список конкурентов, полезный при проектировании онлайн-практики.</li>
-                  <li>Исследование дало приоритеты для запуска продукта на рынок.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-head">
-              <div>
-                <span class="tag">6 · Авторский проект</span>
-                <h3>Школа музыкальной грамотности в Дубне</h3>
-                <p class="muted">Сооснователь, идеолог, разработчик программы и ведущий занятий.</p>
-              </div>
-            </div>
-            <div class="case-columns">
-              <div>
-                <b>Контекст и задача</b>
-                <p>В рамках Летней школы нужно было создать образовательное пространство, где участники — молодые музыканты и просто интересующиеся — получали бы базовые знания по музыкальной грамотности и одновременно учились строить независимое музыкальное сообщество.</p>
-                <b>Что сделано</b>
-                <ul>
-                  <li>Разработана программа школы с нуля: от целей и компетенций до плана каждого занятия.</li>
-                  <li>Содержание построено на стыке теории и практики: основы музграмотности, гармония, ритм, создание инди-сообщества, продвижение музыки, поиск единомышленников.</li>
-                  <li>Занятия планируются в живом формате с групповой работой, разборами кейсов и привлечением музыкантов.</li>
-                  <li>Школа встроена в экосистему с выступлениями и джемами.</li>
-                </ul>
-              </div>
-              <div>
-                <b>Результат работы</b>
-                <ul>
-                  <li>Проект находится в запуске.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-head">
-              <div>
-                <span class="tag">7 · Дополнительно</span>
-                <h3>Другие сильные проекты</h3>
-                <p class="muted">Скрыты в раскрывающемся списке.</p>
-              </div>
-            </div>
-
-            <details>
-              <summary>Показать дополнительные проекты</summary>
-              <div class="extra-list">
-                <div class="extra-item"><b>Авито</b><div class="muted">Культура обратной связи, визуальная новелла, edutainment.</div></div>
-                <div class="extra-item"><b>Школа 21</b><div class="muted">BRD, Vision, ролевые игры, выявление скрытых требований.</div></div>
-                <div class="extra-item"><b>СберОбразование</b><div class="muted">Интерактивные занятия, вовлечённость до 90%.</div></div>
-                <div class="extra-item"><b>Юрайт</b><div class="muted">Редактура 60+ учебников, снижение ошибок на 20%.</div></div>
-                <div class="extra-item"><b>Лицей НИУ ВШЭ</b><div class="muted">Проектная деятельность и сопровождение социальных проектов.</div></div>
-                <div class="extra-item"><b>Образовательный комплекс «Столица»</b><div class="muted">Проектирование курса по робототехнике и проведение 100+ занятий.</div></div>
-              </div>
-            </details>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <div class="section">
-        <div class="title">
-          <h2>Изображения к проектам</h2>
-          <p>Сюда можно позже загрузить 3–6 картинок: обложки проектов, фото со школ, скриншоты курсов, презентации.</p>
-        </div>
-        <div class="gallery-grid">
-          <div class="gallery-card">
-            <img src="images/project-1.jpg" alt="Проект 1">
-            <div class="cap">GenAI для экспертов</div>
-          </div>
-          <div class="gallery-card">
-            <img src="images/project-2.jpg" alt="Проект 2">
-            <div class="cap">Менторство на платформе ЕФС.ФЛ</div>
-          </div>
-          <div class="gallery-card">
-            <img src="images/project-3.jpg" alt="Проект 3">
-            <div class="cap">МТС Диджитал</div>
-          </div>
-          <div class="gallery-card">
-            <img src="images/project-4.jpg" alt="Проект 4">
-            <div class="cap">VK Education</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="reviews">
-      <div class="section">
-        <div class="title"><h2>Отзывы заказчиков</h2></div>
-        <div class="quotes">
-          <div class="quote"><p>«Студентка задавала вопросы, погружалась в детали, уточняла интересующую информацию. Спасибо за проделанную работу. Список конкурентов очень помог при проектировании онлайн-практики».</p><div class="who">Кирилл Богатырёв · VK Education</div></div>
-          <div class="quote"><p>«Катя показала высокий уровень ответственности и внимательности: всегда укладывалась в дедлайны, тщательно вычитывала сценарии, вносила обоснованные правки».</p><div class="who">Альбина Гарифуллина · МТС Диджитал</div></div>
-          <div class="quote"><p>«Проект демонстрирует глубокую аналитику заданий, практическую применимость и научный подход. Ключевая фишка — перевод скучной темы в интерактивные расчёты».</p><div class="who">Отзыв по кейсу “Оплата труда”</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="section">
-        <div class="title"><h2>Опыт и образование</h2></div>
-        <div class="timeline">
-          <div class="item"><div><b>Сбер · Коммуникационный дизайнер</b><span>Январь 2026 — настоящее время</span><div class="muted">Онбординг, GenAI-курс, AI-сообщество, контент-редакция, AI-агент.</div></div><div class="muted">7 мес.</div></div>
-          <div class="item"><div><b>МТС Диджитал · Методист</b><span>Февраль 2025 — Май 2025</span><div class="muted">Вычитка курсов, трек, практики, лицензирование.</div></div><div class="muted">4 мес.</div></div>
-          <div class="item"><div><b>VK · Аналитик</b><span>Октябрь 2024 — Декабрь 2024</span><div class="muted">Исследование EdTech-рынка и аудитории.</div></div><div class="muted">3 мес.</div></div>
-          <div class="item"><div><b>СберОбразование · Преподаватель</b><span>2024</span><div class="muted">Интерактивные занятия и рост вовлечённости.</div></div><div class="muted">—</div></div>
-          <div class="item"><div><b>Лицей НИУ ВШЭ · Руководитель проектов</b><span>2021 — 2023</span><div class="muted">Проектная деятельность и сопровождение студентов.</div></div><div class="muted">—</div></div>
-          <div class="item"><div><b>Образование</b><span>НИУ ВШЭ · Педагогический дизайн</span><div class="muted">МПГУ · Филолог<br>Дополнительное обучение: Школа 21, VK Education, Сколка, РАНХиГС, Яндекс, GeekBrains.</div></div><div class="muted">—</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacts">
-      <div class="section contact">
-        <div class="panel">
-          <h2>Контакты</h2>
-          <p class="muted">Открыта к проектной, частичной и гибридной занятости в Москве.</p>
-          <div class="links">
-            <a href="mailto:kapitanEka@yandex.ru">kapitanEka@yandex.ru</a>
-            <a href="https://t.me/smitherg" target="_blank" rel="noopener">Telegram: @smitherg</a>
-            <a href="tel:+79162828292">+7 (916) 282-82-92</a>
-          </div>
-        </div>
-        <div class="panel">
-          <h2>Дополнительно</h2>
-          <p class="muted">Если нужно, можно добавить отдельную кнопку на полную версию резюме или PDF-файл. Также сюда можно позже подставить ещё изображения проектов.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div class="wrap footer">© Екатерина Гитт · Портфолио</div>
-</body>
-</html>
+    .btn{
+      

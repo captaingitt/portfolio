@@ -10,15 +10,25 @@
   />
   <style>
     :root{
-      --bg:#f5f8f4;
+      --bg:#f4f8f3;
+      --bg-2:#eef7f0;
       --card:#ffffff;
-      --text:#1e2a24;
-      --muted:#5e6f66;
-      --line:#dfe9e2;
+      --card-soft:#f8fcf8;
+      --text:#1c2922;
+      --muted:#5f7066;
+      --line:#d7e5db;
+      --line-strong:#bdd5c2;
+
       --accent:#2f7d57;
-      --accent-2:#72b88b;
-      --accent-soft:#e8f5ed;
-      --shadow:0 10px 30px rgba(31,67,48,.08);
+      --accent-2:#58a56f;
+      --accent-3:#89c99e;
+      --accent-deep:#1f5f42;
+      --accent-soft:#e4f4e9;
+      --accent-soft-2:#d6efde;
+
+      --shadow:0 12px 34px rgba(30, 72, 48, .08);
+      --shadow-soft:0 8px 24px rgba(47,125,87,.10);
+
       --radius:24px;
       --radius-sm:18px;
       --max:1180px;
@@ -31,9 +41,9 @@
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1200px 600px at 10% 0%,rgba(47,125,87,.10),transparent 60%),
-        radial-gradient(900px 500px at 90% 10%,rgba(114,184,139,.14),transparent 50%),
-        var(--bg);
+        radial-gradient(1100px 560px at 0% 0%, rgba(88,165,111,.12), transparent 60%),
+        radial-gradient(900px 500px at 100% 10%, rgba(137,201,158,.16), transparent 50%),
+        linear-gradient(180deg,var(--bg),var(--bg-2));
       line-height:1.55;
     }
 
@@ -51,8 +61,8 @@
       top:0;
       z-index:30;
       backdrop-filter:blur(14px);
-      background:rgba(245,248,244,.86);
-      border-bottom:1px solid rgba(223,233,226,.9);
+      background:rgba(244,248,243,.88);
+      border-bottom:1px solid rgba(215,229,219,.95);
     }
 
     .nav .inner{
@@ -66,6 +76,7 @@
     .brand{
       font-weight:800;
       letter-spacing:.2px;
+      color:var(--accent-deep);
     }
 
     .menu{
@@ -76,7 +87,22 @@
       font-size:14px;
     }
 
-    .menu a:hover{color:var(--text)}
+    .menu a{
+      padding:8px 10px;
+      border-radius:12px;
+      transition:.2s ease;
+    }
+
+    .menu a:hover{
+      color:var(--accent-deep);
+      background:var(--accent-soft);
+    }
+
+    .menu a.resume-link{
+      color:#fff;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow:var(--shadow-soft);
+    }
 
     .hero{
       padding:42px 0 24px;
@@ -95,8 +121,8 @@
     .quote,
     .gallery-card,
     .panel{
-      background:rgba(255,255,255,.88);
-      border:1px solid rgba(223,233,226,.95);
+      background:rgba(255,255,255,.9);
+      border:1px solid rgba(215,229,219,.98);
       box-shadow:var(--shadow);
       border-radius:var(--radius);
     }
@@ -107,6 +133,34 @@
       display:flex;
       flex-direction:column;
       justify-content:space-between;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -120px -140px auto;
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(137,201,158,.30), rgba(137,201,158,0));
+      pointer-events:none;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      width:max-content;
+      padding:10px 14px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--accent-soft),var(--accent-soft-2));
+      color:var(--accent-deep);
+      border:1px solid var(--line-strong);
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:16px;
     }
 
     h1{
@@ -157,11 +211,19 @@
     .btn.primary{
       background:linear-gradient(135deg,var(--accent),var(--accent-2));
       color:#fff;
+      box-shadow:0 10px 24px rgba(47,125,87,.20);
     }
 
     .btn.secondary{
       background:#fff;
       border-color:var(--line);
+      color:var(--text);
+    }
+
+    .btn.outline{
+      background:var(--accent-soft);
+      border-color:var(--line-strong);
+      color:var(--accent-deep);
     }
 
     .btn:hover{transform:translateY(-1px)}
@@ -174,16 +236,25 @@
     }
 
     .meta{
-      padding:14px 16px;
+      padding:16px;
       border-radius:18px;
-      background:rgba(255,255,255,.76);
+      background:linear-gradient(180deg,#fff,var(--card-soft));
       border:1px solid var(--line);
+    }
+
+    .meta:nth-child(2){
+      background:linear-gradient(180deg,var(--accent-soft),#f6fbf7);
+    }
+
+    .meta:nth-child(3){
+      background:linear-gradient(180deg,#edf8f0,#ffffff);
     }
 
     .meta b{
       display:block;
       font-size:18px;
       margin-bottom:4px;
+      color:var(--accent-deep);
     }
 
     .hero-visual{
@@ -195,7 +266,10 @@
     .portrait{
       min-height:280px;
       border-radius:28px;
-      background:linear-gradient(160deg,#224c3a 0%,#2f7d57 42%,#72b88b 100%);
+      background:
+        radial-gradient(circle at 80% 25%, rgba(255,255,255,.18), transparent 28%),
+        radial-gradient(circle at 20% 85%, rgba(255,255,255,.14), transparent 24%),
+        linear-gradient(160deg,#1e5a3f 0%, #2f7d57 42%, #78b98e 100%);
       position:relative;
       overflow:hidden;
     }
@@ -230,7 +304,7 @@
       bottom:20px;
       background:rgba(255,255,255,.14);
       color:#fff;
-      border:1px solid rgba(255,255,255,.22);
+      border:1px solid rgba(255,255,255,.24);
       padding:14px 16px;
       border-radius:18px;
       backdrop-filter:blur(8px);
@@ -256,8 +330,13 @@
     .quick .box{
       padding:18px;
       border-radius:20px;
-      background:#fff;
+      background:linear-gradient(180deg,#fff,var(--card-soft));
       border:1px solid var(--line);
+    }
+
+    .quick .box:nth-child(1),
+    .quick .box:nth-child(4){
+      background:linear-gradient(180deg,var(--accent-soft),#fff);
     }
 
     .quick .box span{
@@ -269,11 +348,28 @@
 
     .quick .box b{
       font-size:16px;
+      color:var(--text);
     }
 
     section{padding:20px 0}
 
-    .section{padding:28px}
+    .section{
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .section.accent-section::before{
+      content:"";
+      position:absolute;
+      top:-80px;
+      right:-80px;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(137,201,158,.26), rgba(137,201,158,0));
+      pointer-events:none;
+    }
 
     .title{
       display:flex;
@@ -287,6 +383,7 @@
       margin:0;
       font-size:28px;
       line-height:1.15;
+      color:var(--accent-deep);
     }
 
     .about p{
@@ -304,13 +401,19 @@
     .skill{
       padding:18px;
       border-radius:20px;
-      background:#fff;
+      background:linear-gradient(180deg,#fff,var(--card-soft));
       border:1px solid var(--line);
+    }
+
+    .skill:nth-child(2),
+    .skill:nth-child(4){
+      background:linear-gradient(180deg,var(--accent-soft),#fff);
     }
 
     .skill b{
       display:block;
       margin-bottom:6px;
+      color:var(--accent-deep);
     }
 
     .skill span{
@@ -323,7 +426,10 @@
       gap:16px;
     }
 
-    .case{padding:22px}
+    .case{
+      padding:22px;
+      background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(248,252,248,.96));
+    }
 
     .case-head{
       display:flex;
@@ -344,8 +450,9 @@
       display:inline-flex;
       padding:7px 10px;
       border-radius:999px;
-      background:rgba(47,125,87,.12);
-      color:#236347;
+      background:linear-gradient(135deg,var(--accent-soft),var(--accent-soft-2));
+      color:var(--accent-deep);
+      border:1px solid var(--line-strong);
       font-size:13px;
       font-weight:700;
     }
@@ -365,14 +472,19 @@
       padding:18px;
       border:1px solid var(--line);
       border-radius:20px;
-      background:linear-gradient(180deg,#fff 0%,#fbfefc 100%);
+      background:linear-gradient(180deg,#fff 0%,#f8fcf8 100%);
       min-height:100%;
+    }
+
+    .case-col:nth-child(2){
+      background:linear-gradient(180deg,#eff8f1 0%,#ffffff 100%);
     }
 
     .case-col b{
       display:block;
       margin-bottom:6px;
       font-size:15px;
+      color:var(--accent-deep);
     }
 
     .case ul{
@@ -394,10 +506,10 @@
 
     .project-links a{
       padding:10px 14px;
-      border:1px solid var(--line);
+      border:1px solid var(--line-strong);
       border-radius:14px;
-      background:#fff;
-      color:var(--accent);
+      background:var(--accent-soft);
+      color:var(--accent-deep);
       font-weight:700;
       font-size:14px;
     }
@@ -408,10 +520,16 @@
       gap:14px;
     }
 
-    .quote{padding:18px}
+    .quote{
+      padding:18px;
+      background:linear-gradient(180deg,#fff,var(--card-soft));
+    }
+
+    .quote:nth-child(2){
+      background:linear-gradient(180deg,var(--accent-soft),#fff);
+    }
 
     .quote p{margin:0 0 14px}
-
     .quote .who{
       color:var(--muted);
       font-size:14px;
@@ -426,13 +544,19 @@
       padding:16px 18px;
       border:1px solid var(--line);
       border-radius:18px;
-      background:#fff;
+      background:linear-gradient(180deg,#fff,var(--card-soft));
       display:block;
+    }
+
+    .item:nth-child(1){
+      background:linear-gradient(180deg,var(--accent-soft),#fff);
+      border-color:var(--line-strong);
     }
 
     .item b{
       display:block;
       margin-bottom:4px;
+      color:var(--accent-deep);
     }
 
     .item span{color:var(--muted)}
@@ -444,7 +568,15 @@
       gap:18px;
     }
 
-    .panel{padding:22px}
+    .panel{
+      padding:22px;
+      background:linear-gradient(180deg,#fff,var(--card-soft));
+    }
+
+    .panel.resume-panel{
+      background:linear-gradient(180deg,var(--accent-soft),#ffffff);
+      border-color:var(--line-strong);
+    }
 
     .links{
       display:grid;
@@ -462,6 +594,11 @@
       border:1px solid var(--line);
       border-radius:18px;
       padding:14px 16px;
+    }
+
+    details[open]{
+      background:linear-gradient(180deg,var(--accent-soft),#fff);
+      border-color:var(--line-strong);
     }
 
     summary{
@@ -500,6 +637,7 @@
       min-height:180px;
       display:flex;
       flex-direction:column;
+      background:linear-gradient(180deg,#fff,var(--card-soft));
     }
 
     .gallery-card img{
@@ -558,6 +696,10 @@
       .panel,
       .quote{
         padding:20px;
+      }
+
+      .eyebrow{
+        margin-bottom:14px;
       }
 
       h1{
@@ -627,6 +769,7 @@
         <a href="#gallery">Изображения</a>
         <a href="#reviews">Отзывы</a>
         <a href="#experience">Опыт</a>
+        <a href="#resume" class="resume-link">Резюме</a>
         <a href="#contacts">Контакты</a>
       </div>
     </div>
@@ -637,6 +780,8 @@
       <div class="hero-grid">
         <div class="hero-card">
           <div>
+            <div class="eyebrow">Методист образовательных программ · EdTech · IT · корпоративное обучение</div>
+
             <h1>
               <span class="desktop-title">
                 <span class="hero-title-line">Проектирую образовательные</span>
@@ -656,6 +801,7 @@
             <div class="cta">
               <a class="btn primary" href="#cases">Смотреть кейсы</a>
               <a class="btn secondary" href="#contacts">Связаться</a>
+              <a class="btn outline" href="#resume">Резюме</a>
             </div>
           </div>
 
@@ -706,7 +852,7 @@
     </section>
 
     <section id="about">
-      <div class="section about">
+      <div class="section accent-section about">
         <div class="title"><h2>Обо мне</h2></div>
         <p>
           Здравствуйте! Меня зовут Екатерина, и&nbsp;мне нравится делать процесс обучения захватывающим. Через анализ существующих и&nbsp;поиск новых инструментов я&nbsp;открываю для&nbsp;себя мир методики и&nbsp;новых технологий, который вдохновляет меня двигаться дальше. Верю, что сильный курс начинается с&nbsp;цифр и&nbsp;заканчивается эмоцией пользователя, который хочет продолжить обучение.
@@ -727,7 +873,7 @@
     </section>
 
     <section id="cases">
-      <div class="section">
+      <div class="section accent-section">
         <div class="title"><h2>Избранные кейсы</h2></div>
         <div class="cases">
           <article class="case">
@@ -829,7 +975,7 @@
     </section>
 
     <section id="reviews">
-      <div class="section">
+      <div class="section accent-section">
         <div class="title"><h2>Отзывы заказчиков</h2></div>
         <div class="quotes">
           <div class="quote">
@@ -853,7 +999,7 @@
         <div class="title"><h2>Опыт и&nbsp;образование</h2></div>
         <div class="timeline">
           <div class="item">
-            <b>Сбер · Коммуникационный дизайнер</b>
+            <b>Сбер · DevRel</b>
             <span>Январь 2026 — настоящее время</span>
             <div class="muted">Онбординг, GenAI-курс, AI-сообщество, контент-редакция, AI-агент</div>
           </div>
@@ -875,10 +1021,26 @@
       </div>
     </section>
 
+    <section id="resume">
+      <div class="section">
+        <div class="panel resume-panel">
+          <div class="title"><h2>Резюме</h2></div>
+          <p class="muted">
+            Здесь можно открыть PDF‑версию резюме в&nbsp;новой вкладке.
+          </p>
+          <div class="cta" style="margin-top:16px;">
+            <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener noreferrer" type="application/pdf">
+              Открыть резюме (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contacts">
-      <div class="section contact">
+      <div class="section contact accent-section">
         <div class="panel">
-          <h2>Контакты</h2>
+          <h2 style="margin-top:0;color:var(--accent-deep);">Контакты</h2>
           <p class="muted">Открыта к&nbsp;проектной, частичной и&nbsp;гибридной занятости в&nbsp;Москве</p>
           <div class="links">
             <a href="mailto:kapitanEka@yandex.ru">kapitanEka@yandex.ru</a>

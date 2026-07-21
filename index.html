@@ -1,987 +1,1133 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Екатерина Гитт — Методист образовательных программ</title>
   <meta
     name="description"
-    content="Портфолио Екатерины Гитт — методист образовательных программ, проектирование образовательных продуктов, EdTech, IT и корпоративное обучение"
-  />
+    content="Портфолио Екатерины Гитт — методист образовательных программ, EdTech, корпоративное обучение, проектирование образовательных продуктов"
+  >
+
   <style>
-    :root{
-      --bg:#f4f8f3;
-      --bg-2:#eef7f0;
-      --card:#ffffff;
-      --card-soft:#f8fcf8;
-      --text:#1c2922;
-      --muted:#5f7066;
-      --line:#d7e5db;
-      --line-strong:#bdd5c2;
+    :root {
+      --bg: #f4f8f3;
+      --bg-soft: #eef7f0;
+      --card: #ffffff;
+      --card-soft: #f8fcf8;
+      --text: #1c2922;
+      --muted: #5f7066;
+      --line: #d7e5db;
+      --line-strong: #bdd5c2;
 
-      --accent:#2f7d57;
-      --accent-2:#58a56f;
-      --accent-3:#89c99e;
-      --accent-deep:#1f5f42;
-      --accent-soft:#e4f4e9;
-      --accent-soft-2:#d6efde;
+      --accent: #2f7d57;
+      --accent-dark: #1f5f42;
+      --accent-soft: #e4f4e9;
+      --accent-soft-2: #d6efde;
 
-      --shadow:0 12px 34px rgba(30,72,48,.08);
-      --shadow-soft:0 8px 24px rgba(47,125,87,.10);
+      --shadow: 0 12px 34px rgba(30, 72, 48, 0.08);
+      --radius: 24px;
+      --radius-sm: 18px;
 
-      --radius:24px;
-      --radius-sm:18px;
-      --max:1180px;
+      --container: 1180px;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(1100px 560px at 0% 0%, rgba(88,165,111,.12), transparent 60%),
-        radial-gradient(900px 500px at 100% 10%, rgba(137,201,158,.16), transparent 50%),
-        linear-gradient(180deg,var(--bg),var(--bg-2));
-      line-height:1.55;
+        radial-gradient(1100px 560px at 0% 0%, rgba(88, 165, 111, 0.12), transparent 60%),
+        radial-gradient(900px 500px at 100% 10%, rgba(137, 201, 158, 0.16), transparent 50%),
+        linear-gradient(180deg, var(--bg), var(--bg-soft));
+      line-height: 1.55;
     }
 
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-
-    .wrap{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:0 20px;
+    img {
+      display: block;
+      max-width: 100%;
     }
 
-    .nav{
-      position:sticky;
-      top:0;
-      z-index:30;
-      backdrop-filter:blur(14px);
-      background:rgba(244,248,243,.88);
-      border-bottom:1px solid rgba(215,229,219,.95);
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .nav .inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:16px 0;
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    .brand{
-      font-weight:800;
-      letter-spacing:.2px;
-      color:var(--accent-deep);
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(244, 248, 243, 0.88);
+      border-bottom: 1px solid rgba(215, 229, 219, 0.95);
     }
 
-    .menu{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      color:var(--muted);
-      font-size:14px;
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
     }
 
-    .menu a{
-      padding:8px 10px;
-      border-radius:12px;
-      transition:.2s ease;
+    .brand {
+      font-weight: 800;
+      color: var(--accent-dark);
+      letter-spacing: 0.2px;
     }
 
-    .menu a:hover{
-      color:var(--accent-deep);
-      background:var(--accent-soft);
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 14px;
+      color: var(--muted);
     }
 
-    .menu a.resume-link{
-      color:#fff;
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      box-shadow:var(--shadow-soft);
+    .menu a {
+      padding: 8px 10px;
+      border-radius: 12px;
+      transition: 0.2s ease;
     }
 
-    .hero{
-      padding:42px 0 24px;
+    .menu a:hover {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:28px;
-      align-items:stretch;
+    .menu .menu__resume {
+      background: linear-gradient(135deg, var(--accent), #58a56f);
+      color: #fff;
     }
 
-    .hero-card,
-    .section,
-    .case,
-    .quote,
-    .gallery-card,
-    .panel{
-      background:rgba(255,255,255,.9);
-      border:1px solid rgba(215,229,219,.98);
-      box-shadow:var(--shadow);
-      border-radius:var(--radius);
+    main section {
+      padding: 20px 0;
     }
 
-    .hero-card{
-      padding:34px;
-      min-height:560px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      position:relative;
-      overflow:hidden;
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(215, 229, 219, 0.98);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      inset:auto -120px -140px auto;
-      width:280px;
-      height:280px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(137,201,158,.30), rgba(137,201,158,0));
-      pointer-events:none;
+    .hero {
+      padding-top: 42px;
+      padding-bottom: 24px;
     }
 
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      width:max-content;
-      max-width:100%;
-      padding:10px 14px;
-      border-radius:999px;
-      background:linear-gradient(135deg,var(--accent-soft),var(--accent-soft-2));
-      color:var(--accent-deep);
-      border:1px solid var(--line-strong);
-      font-size:13px;
-      font-weight:700;
-      margin-bottom:16px;
+    .hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.72fr);
+      gap: 24px;
+      align-items: stretch;
     }
 
-    .hero-copy{
-      max-width:100%;
-      min-width:0;
+    .hero__main,
+    .hero__side {
+      padding: 32px;
     }
 
-    h1{
-      font-size:clamp(34px,4.6vw,60px);
-      line-height:0.98;
-      margin:0 0 18px;
-      letter-spacing:-0.045em;
-      max-width:12ch;
-      text-wrap:balance;
-      overflow-wrap:anywhere;
+    .hero__main {
+      min-width: 0;
     }
 
-    .desktop-title{display:block;}
-    .desktop-title .hero-title-line{
-      display:block;
-      white-space:normal;
-    }
-    .mobile-title{display:none;}
-
-    .lead{
-      font-size:18px;
-      color:var(--muted);
-      max-width:720px;
-    }
-
-    .cta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:22px;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent-soft), var(--accent-soft-2));
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:14px 18px;
-      border-radius:16px;
-      font-weight:700;
-      border:1px solid transparent;
-      transition:.2s ease;
-      min-height:48px;
+    .hero__title {
+      margin: 0 0 18px;
+      font-size: clamp(40px, 5vw, 66px);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
+      max-width: 12.5ch;
     }
 
-    .btn.primary{
-      background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      color:#fff;
-      box-shadow:0 10px 24px rgba(47,125,87,.20);
+    .hero__title-line {
+      display: block;
     }
 
-    .btn.secondary{
-      background:#fff;
-      border-color:var(--line);
-      color:var(--text);
+    .hero__lead {
+      margin: 0;
+      max-width: 44rem;
+      font-size: 18px;
+      color: var(--muted);
     }
 
-    .btn.outline{
-      background:var(--accent-soft);
-      border-color:var(--line-strong);
-      color:var(--accent-deep);
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
     }
 
-    .btn:hover{transform:translateY(-1px)}
-
-    .hero-meta{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-      margin-top:26px;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
     }
 
-    .meta{
-      padding:16px;
-      border-radius:18px;
-      background:linear-gradient(180deg,#fff,var(--card-soft));
-      border:1px solid var(--line);
+    .btn:hover {
+      transform: translateY(-1px);
     }
 
-    .meta:nth-child(2){
-      background:linear-gradient(180deg,var(--accent-soft),#f6fbf7);
+    .btn--primary {
+      background: linear-gradient(135deg, var(--accent), #58a56f);
+      color: #fff;
     }
 
-    .meta:nth-child(3){
-      background:linear-gradient(180deg,#edf8f0,#ffffff);
+    .btn--secondary {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--line);
     }
 
-    .meta b{
-      display:block;
-      font-size:18px;
-      margin-bottom:4px;
-      color:var(--accent-deep);
+    .btn--soft {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      border-color: var(--line-strong);
     }
 
-    .hero-visual{
-      padding:22px;
-      display:grid;
-      gap:16px;
+    .hero__stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 28px;
     }
 
-    .hero-aside{
-      min-height:280px;
-      border-radius:28px;
+    .stat {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fff, var(--card-soft));
+    }
+
+    .stat:nth-child(2) {
+      background: linear-gradient(180deg, var(--accent-soft), #f6fbf7);
+    }
+
+    .stat:nth-child(3) {
+      background: linear-gradient(180deg, #edf8f0, #fff);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 18px;
+      color: var(--accent-dark);
+    }
+
+    .hero__side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero__side-top {
+      min-height: 260px;
+      padding: 20px;
+      border-radius: 24px;
+      color: #fff;
       background:
         radial-gradient(circle at 82% 18%, rgba(255,255,255,.18), transparent 28%),
         radial-gradient(circle at 14% 82%, rgba(255,255,255,.14), transparent 24%),
-        linear-gradient(160deg,#1e5a3f 0%, #2f7d57 42%, #78b98e 100%);
-      position:relative;
-      overflow:hidden;
-      padding:22px;
-      display:grid;
-      align-content:end;
+        linear-gradient(160deg, #1e5a3f 0%, #2f7d57 42%, #78b98e 100%);
     }
 
-    .hero-aside::before,
-    .hero-aside::after{
-      content:"";
-      position:absolute;
-      border-radius:50%;
+    .hero__side-top h2 {
+      margin: 0 0 14px;
+      font-size: 20px;
+      line-height: 1.2;
     }
 
-    .hero-aside::before{
-      width:300px;
-      height:300px;
-      background:rgba(255,255,255,.14);
-      right:-80px;
-      top:-60px;
+    .side-list {
+      display: grid;
+      gap: 10px;
+      font-size: 14px;
     }
 
-    .hero-aside::after{
-      width:220px;
-      height:220px;
-      background:rgba(255,255,255,.10);
-      left:-60px;
-      bottom:-70px;
+    .side-list div {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 10px;
+      align-items: start;
     }
 
-    .aside-card{
-      position:relative;
-      z-index:1;
-      background:rgba(255,255,255,.14);
-      color:#fff;
-      border:1px solid rgba(255,255,255,.24);
-      padding:18px;
-      border-radius:20px;
-      backdrop-filter:blur(8px);
+    .side-list strong {
+      color: #eefbf1;
+      font-size: 13px;
+      letter-spacing: 0.01em;
     }
 
-    .aside-card h3{
-      margin:0 0 12px;
-      font-size:20px;
-      line-height:1.2;
+    .hero__side-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
 
-    .aside-points{
-      display:grid;
-      gap:10px;
+    .mini-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fff, var(--card-soft));
     }
 
-    .aside-points div{
-      display:grid;
-      grid-template-columns:110px 1fr;
-      gap:10px;
-      align-items:start;
-      font-size:14px;
-      line-height:1.45;
+    .mini-card:nth-child(1),
+    .mini-card:nth-child(4) {
+      background: linear-gradient(180deg, var(--accent-soft), #fff);
     }
 
-    .aside-points b{
-      color:#eefbf1;
-      font-size:13px;
-      letter-spacing:.01em;
+    .mini-card span {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: var(--muted);
     }
 
-    .quick{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
+    .mini-card strong {
+      font-size: 16px;
+      color: var(--text);
     }
 
-    .quick .box{
-      padding:18px;
-      border-radius:20px;
-      background:linear-gradient(180deg,#fff,var(--card-soft));
-      border:1px solid var(--line);
+    .section-box {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .quick .box:nth-child(1),
-    .quick .box:nth-child(4){
-      background:linear-gradient(180deg,var(--accent-soft),#fff);
+    .section-box--accent::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(137, 201, 158, 0.26), rgba(137, 201, 158, 0));
+      pointer-events: none;
     }
 
-    .quick .box span{
-      display:block;
-      color:var(--muted);
-      font-size:13px;
-      margin-bottom:6px;
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
     }
 
-    .quick .box b{
-      font-size:16px;
-      color:var(--text);
+    .section-title h2 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.15;
+      color: var(--accent-dark);
     }
 
-    section{padding:20px 0}
-
-    .section{
-      padding:28px;
-      position:relative;
-      overflow:hidden;
+    .about-text {
+      margin: 0;
+      font-size: 17px;
     }
 
-    .section.accent-section::before{
-      content:"";
-      position:absolute;
-      top:-80px;
-      right:-80px;
-      width:220px;
-      height:220px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(137,201,158,.26), rgba(137,201,158,0));
-      pointer-events:none;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
     }
 
-    .title{
-      display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:18px;
+    .skill-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(180deg, #fff, var(--card-soft));
     }
 
-    .title h2{
-      margin:0;
-      font-size:28px;
-      line-height:1.15;
-      color:var(--accent-deep);
+    .skill-card:nth-child(2),
+    .skill-card:nth-child(4) {
+      background: linear-gradient(180deg, var(--accent-soft), #fff);
     }
 
-    .about p{
-      margin:0;
-      color:var(--text);
-      font-size:17px;
+    .skill-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent-dark);
     }
 
-    .grid-4{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
+    .skill-card span {
+      font-size: 14px;
+      color: var(--muted);
     }
 
-    .skill{
-      padding:18px;
-      border-radius:20px;
-      background:linear-gradient(180deg,#fff,var(--card-soft));
-      border:1px solid var(--line);
+    .cases {
+      display: grid;
+      gap: 16px;
     }
 
-    .skill:nth-child(2),
-    .skill:nth-child(4){
-      background:linear-gradient(180deg,var(--accent-soft),#fff);
+    .case {
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(248,252,248,.96));
     }
 
-    .skill b{
-      display:block;
-      margin-bottom:6px;
-      color:var(--accent-deep);
+    .case__head {
+      margin-bottom: 10px;
     }
 
-    .skill span{
-      color:var(--muted);
-      font-size:14px;
+    .case__tag {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: linear-gradient(135deg, var(--accent-soft), var(--accent-soft-2));
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 700;
     }
 
-    .cases{
-      display:grid;
-      gap:16px;
+    .case__head h3 {
+      margin: 10px 0 8px;
+      font-size: 22px;
+      line-height: 1.18;
     }
 
-    .case{
-      padding:22px;
-      background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(248,252,248,.96));
+    .case__head p {
+      margin: 0;
+      color: var(--muted);
     }
 
-    .case-head{
-      display:flex;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
-      align-items:flex-start;
-      margin-bottom:8px;
+    .case__cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 16px;
     }
 
-    .case h3{
-      margin:0 0 8px;
-      font-size:22px;
-      line-height:1.18;
+    .case__col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 100%;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(180deg, #fff, #f8fcf8);
     }
 
-    .tag{
-      display:inline-flex;
-      padding:7px 10px;
-      border-radius:999px;
-      background:linear-gradient(135deg,var(--accent-soft),var(--accent-soft-2));
-      color:var(--accent-deep);
-      border:1px solid var(--line-strong);
-      font-size:13px;
-      font-weight:700;
+    .case__col:nth-child(2) {
+      background: linear-gradient(180deg, #eff8f1, #fff);
     }
 
-    .case-columns{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      margin-top:16px;
-      align-items:stretch;
+    .case__col strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+      color: var(--accent-dark);
     }
 
-    .case-col{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      padding:18px;
-      border:1px solid var(--line);
-      border-radius:20px;
-      background:linear-gradient(180deg,#fff 0%,#f8fcf8 100%);
-      min-height:100%;
+    .case__col p,
+    .case__col ul {
+      margin: 0;
     }
 
-    .case-col:nth-child(2){
-      background:linear-gradient(180deg,#eff8f1 0%,#ffffff 100%);
+    .case__col ul {
+      padding-left: 18px;
     }
 
-    .case-col b{
-      display:block;
-      margin-bottom:6px;
-      font-size:15px;
-      color:var(--accent-deep);
+    .case__col li {
+      margin: 7px 0;
     }
 
-    .case ul{
-      margin:0;
-      padding-left:18px;
-      color:var(--text);
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .case li{margin:7px 0}
-
-    .muted{color:var(--muted)}
-
-    .project-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:6px;
+    .project-links a {
+      padding: 10px 14px;
+      border: 1px solid var(--line-strong);
+      border-radius: 14px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 14px;
+      font-weight: 700;
     }
 
-    .project-links a{
-      padding:10px 14px;
-      border:1px solid var(--line-strong);
-      border-radius:14px;
-      background:var(--accent-soft);
-      color:var(--accent-deep);
-      font-weight:700;
-      font-size:14px;
+    .gallery-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
     }
 
-    .quotes{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
+    .gallery-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(180deg, #fff, var(--card-soft));
     }
 
-    .quote{
-      padding:18px;
-      background:linear-gradient(180deg,#fff,var(--card-soft));
+    .gallery-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #eef6f0;
     }
 
-    .quote:nth-child(2){
-      background:linear-gradient(180deg,var(--accent-soft),#fff);
+    .gallery-card__caption {
+      padding: 12px 14px;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--muted);
     }
 
-    .quote p{margin:0 0 14px}
-    .quote .who{
-      color:var(--muted);
-      font-size:14px;
+    .quotes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
     }
 
-    .timeline{
-      display:grid;
-      gap:12px;
+    .quote {
+      padding: 18px;
+      background: linear-gradient(180deg, #fff, var(--card-soft));
     }
 
-    .item{
-      padding:16px 18px;
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:linear-gradient(180deg,#fff,var(--card-soft));
-      display:block;
+    .quote:nth-child(2) {
+      background: linear-gradient(180deg, var(--accent-soft), #fff);
     }
 
-    .item:nth-child(1){
-      background:linear-gradient(180deg,var(--accent-soft),#fff);
-      border-color:var(--line-strong);
+    .quote p {
+      margin: 0 0 14px;
     }
 
-    .item b{
-      display:block;
-      margin-bottom:4px;
-      color:var(--accent-deep);
+    .quote__author {
+      font-size: 14px;
+      color: var(--muted);
     }
 
-    .item span{color:var(--muted)}
-    .item .muted{margin-top:6px}
-
-    .contact{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
+    .timeline {
+      display: grid;
+      gap: 12px;
     }
 
-    .panel{
-      padding:22px;
-      background:linear-gradient(180deg,#fff,var(--card-soft));
+    .timeline-item {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fff, var(--card-soft));
     }
 
-    .panel.resume-panel{
-      background:linear-gradient(180deg,var(--accent-soft),#ffffff);
-      border-color:var(--line-strong);
+    .timeline-item:first-child {
+      border-color: var(--line-strong);
+      background: linear-gradient(180deg, var(--accent-soft), #fff);
     }
 
-    .links{
-      display:grid;
-      gap:10px;
-      margin-top:10px;
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent-dark);
     }
 
-    .links a{
-      color:var(--accent);
-      font-weight:700;
+    .timeline-item span,
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
     }
 
-    .gallery-grid{
-      display:flex;
-      gap:14px;
-      margin-top:16px;
-      overflow-x:auto;
-      padding-bottom:4px;
+    .contacts {
+      display: grid;
+      gap: 18px;
     }
 
-    .gallery-card{
-      flex:0 0 33%;
-      min-width:260px;
-      max-width:360px;
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      background:linear-gradient(180deg,#fff,var(--card-soft));
-      border-radius:20px;
-      border:1px solid var(--line);
+    .contact-card {
+      padding: 22px;
+      background: linear-gradient(180deg, #fff, var(--card-soft));
     }
 
-    .gallery-card img{
-      width:100%;
-      height:220px;
-      object-fit:cover;
-      background:#eef6f0;
+    .contact-card--resume {
+      border-color: var(--line-strong);
+      background: linear-gradient(180deg, var(--accent-soft), #fff);
     }
 
-    .gallery-card .cap{
-      padding:12px 14px;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.4;
+    .contact-card h2 {
+      margin-top: 0;
+      color: var(--accent-dark);
     }
 
-    .footer{
-      padding:30px 0 44px;
-      color:var(--muted);
+    .contact-links {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
     }
 
-    @media (max-width: 1200px){
-      h1{
-        font-size:clamp(32px,4.2vw,52px);
-        max-width:11ch;
+    .contact-links a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 30px 0 44px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 1100px) {
+      .hero__grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
       }
 
-      .hero-card{
-        padding:28px;
-      }
-
-      .lead{
-        font-size:17px;
+      .hero__title {
+        font-size: clamp(36px, 4.6vw, 56px);
       }
     }
 
-    @media (max-width: 980px){
-      .menu{display:none}
-      .hero-grid,
-      .grid-4,
-      .quotes{
-        grid-template-columns:1fr 1fr;
-      }
-      .hero-card{min-height:auto}
-      .hero-meta{grid-template-columns:1fr}
-      .quick{grid-template-columns:1fr}
-      .case-columns{grid-template-columns:1fr}
-      .gallery-card{
-        flex:0 0 70%;
-      }
-    }
-
-    @media (max-width: 720px){
-      .wrap{padding:0 14px}
-      .hero{padding:20px 0 10px}
-
-      .hero-grid,
-      .grid-4,
-      .quotes,
-      .hero-meta,
-      .quick,
-      .case-columns{
-        grid-template-columns:1fr;
+    @media (max-width: 980px) {
+      .menu {
+        display: none;
       }
 
-      .hero-card,
-      .hero-visual,
-      .section,
+      .hero__grid,
+      .skills-grid,
+      .quotes {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__main,
+      .hero__side,
+      .section-box,
       .case,
-      .panel,
-      .quote{
-        padding:20px;
+      .quote,
+      .contact-card {
+        padding: 24px;
       }
 
-      .eyebrow{margin-bottom:14px;}
+      .hero__stats,
+      .case__cols,
+      .gallery-row {
+        grid-template-columns: 1fr;
+      }
+    }
 
-      h1{
-        font-size:clamp(30px, 10vw, 42px);
-        line-height:1.05;
-        margin:0 0 12px;
-        letter-spacing:-.03em;
-        max-width:100%;
+    @media (max-width: 720px) {
+      .container {
+        padding: 0 14px;
       }
 
-      .desktop-title{display:none}
-      .mobile-title{display:block}
-
-      .lead{
-        font-size:16px;
-        line-height:1.55;
+      .hero {
+        padding-top: 20px;
+        padding-bottom: 10px;
       }
 
-      .title{
-        flex-direction:column;
-        align-items:flex-start;
+      .skills-grid,
+      .quotes,
+      .hero__stats,
+      .hero__side-bottom,
+      .case__cols,
+      .gallery-row {
+        grid-template-columns: 1fr;
       }
 
-      .title h2{
-        font-size:24px;
+      .hero__title {
+        max-width: 100%;
+        font-size: clamp(32px, 10vw, 42px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
       }
 
-      .case h3{
-        font-size:20px;
+      .hero__lead {
+        font-size: 16px;
       }
 
-      .cta{flex-direction:column;}
-      .btn{width:100%;}
-
-      .hero-aside{
-        min-height:auto;
-        padding:16px;
+      .hero__actions {
+        flex-direction: column;
       }
 
-      .gallery-card img{
-        height:200px;
+      .btn {
+        width: 100%;
       }
 
-      .about p{
-        font-size:16px;
+      .section-title {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .gallery-card{
-        flex:0 0 80%;
+      .section-title h2 {
+        font-size: 24px;
+      }
+
+      .case__head h3 {
+        font-size: 20px;
+      }
+
+      .hero__main,
+      .hero__side,
+      .section-box,
+      .case,
+      .quote,
+      .contact-card {
+        padding: 20px;
+      }
+
+      .side-list div {
+        grid-template-columns: 1fr;
+        gap: 4px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="nav">
-    <div class="wrap inner">
+  <header class="nav">
+    <div class="container nav__inner">
       <div class="brand">Екатерина Гитт</div>
-      <div class="menu">
+      <nav class="menu">
         <a href="#about">Обо мне</a>
         <a href="#skills">Навыки</a>
         <a href="#cases">Кейсы</a>
         <a href="#gallery">Изображения</a>
         <a href="#reviews">Отзывы</a>
         <a href="#experience">Опыт</a>
-        <a href="#resume" class="resume-link">Резюме</a>
+        <a href="#resume" class="menu__resume">Резюме</a>
         <a href="#contacts">Контакты</a>
-      </div>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <main class="wrap">
-    <!-- HERO -->
+  <main class="container">
     <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-card">
-          <div class="hero-copy">
-            <div class="eyebrow">Методист образовательных программ · EdTech · IT · корпоративное обучение</div>
+      <div class="hero__grid">
+        <article class="card hero__main">
+          <div class="eyebrow">Методист образовательных программ · EdTech · IT · корпоративное обучение</div>
 
-            <h1>
-              <span class="desktop-title">
-                <span class="hero-title-line">Проектирую образовательные</span>
-                <span class="hero-title-line">продукты, которые работают</span>
-                <span class="hero-title-line">на&nbsp;людей и&nbsp;бизнес</span>
-              </span>
+          <h1 class="hero__title">
+            <span class="hero__title-line">Проектирую образовательные продукты,</span>
+            <span class="hero__title-line">которые работают</span>
+            <span class="hero__title-line">для&nbsp;людей и&nbsp;бизнеса</span>
+          </h1>
 
-              <span class="mobile-title">
-                Проектирую образовательные продукты, которые работают на&nbsp;людей и&nbsp;бизнес
-              </span>
-            </h1>
+          <p class="hero__lead">
+            Я создаю курсы, треки и внутренние образовательные продукты на основе данных, обратной связи и реальных задач аудитории. Умею соединять методологию, контент, аналитику и запуск.
+          </p>
 
-            <p class="lead">
-              Я создаю курсы, треки и&nbsp;внутренние образовательные продукты на&nbsp;основе данных, обратной связи и&nbsp;реальных задач аудитории. Умею соединять методологию, контент, аналитику и&nbsp;запуск.
-            </p>
-
-            <div class="cta">
-              <a class="btn primary" href="#cases">Смотреть кейсы</a>
-              <a class="btn secondary" href="#contacts">Связаться</a>
-              <a class="btn outline" href="#resume">Резюме</a>
-            </div>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#cases">Смотреть кейсы</a>
+            <a class="btn btn--secondary" href="#contacts">Связаться</a>
+            <a class="btn btn--soft" href="#resume">Резюме</a>
           </div>
 
-          <div class="hero-meta">
-            <div class="meta">
-              <b>10+&nbsp;лет</b>
-              <span>в&nbsp;образовании и&nbsp;EdTech</span>
+          <div class="hero__stats">
+            <div class="stat">
+              <strong>10+ лет</strong>
+              <span>в образовании и EdTech</span>
             </div>
-            <div class="meta">
-              <b>Sber · MTS · VK</b>
-              <span>корпоративные и&nbsp;продуктовые кейсы</span>
+            <div class="stat">
+              <strong>Sber · MTS · VK</strong>
+              <span>корпоративные и продуктовые кейсы</span>
             </div>
-            <div class="meta">
-              <b>Data-driven</b>
+            <div class="stat">
+              <strong>Data-driven</strong>
               <span>аналитика, измерения, улучшение</span>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="hero-visual hero-card">
-          <div class="hero-aside">
-            <div class="aside-card">
-              <h3>Чем я полезна командам</h3>
-              <div class="aside-points">
-                <div>
-                  <b>Для кого</b>
-                  <span>IT-команды, корпоративные университеты, EdTech-проекты, внутренние эксперты</span>
-                </div>
-                <div>
-                  <b>Что делаю</b>
-                  <span>Проектирую программы, треки, практику, обучающие кампании и&nbsp;методическую логику продукта</span>
-                </div>
-                <div>
-                  <b>Как работаю</b>
-                  <span>Через исследования, данные, интервью, обратную связь и&nbsp;сборку решений под реальные бизнес-задачи</span>
-                </div>
-                <div>
-                  <b>На выходе</b>
-                  <span>Понятный образовательный продукт, который можно запускать, измерять и&nbsp;масштабировать</span>
-                </div>
+        <aside class="card hero__side">
+          <div class="hero__side-top">
+            <h2>Чем я полезна командам</h2>
+            <div class="side-list">
+              <div>
+                <strong>Для кого</strong>
+                <span>IT-команды, корпоративные университеты, EdTech-проекты, внутренние эксперты</span>
+              </div>
+              <div>
+                <strong>Что делаю</strong>
+                <span>Проектирую программы, треки, практику, обучающие кампании и методическую логику продукта</span>
+              </div>
+              <div>
+                <strong>Как работаю</strong>
+                <span>Через исследования, данные, интервью, обратную связь и сборку решений под реальные бизнес-задачи</span>
+              </div>
+              <div>
+                <strong>На выходе</strong>
+                <span>Понятный образовательный продукт, который можно запускать, измерять и масштабировать</span>
               </div>
             </div>
           </div>
 
-          <div class="quick">
-            <div class="box">
+          <div class="hero__side-bottom">
+            <div class="mini-card">
               <span>Фокус</span>
-              <b>Образовательные продукты</b>
+              <strong>Образовательные продукты</strong>
             </div>
-            <div class="box">
+            <div class="mini-card">
               <span>Формат</span>
-              <b>Полный цикл</b>
+              <strong>Полный цикл</strong>
             </div>
-            <div class="box">
+            <div class="mini-card">
               <span>Город</span>
-              <b>Москва</b>
+              <strong>Москва</strong>
             </div>
-            <div class="box">
+            <div class="mini-card">
               <span>Связь</span>
-              <b>@smitherg</b>
+              <strong>@smitherg</strong>
             </div>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about">
-      <div class="section accent-section about">
-        <div class="title"><h2>Обо мне</h2></div>
-        <p>
-          Здравствуйте! Меня зовут Екатерина, и&nbsp;мне нравится делать процесс обучения захватывающим. Через анализ существующих и&nbsp;поиск новых инструментов я&nbsp;открываю для&nbsp;себя мир методики и&nbsp;новых технологий, который вдохновляет меня двигаться дальше. Верю, что сильный курс начинается с&nbsp;цифр и&nbsp;заканчивается эмоцией пользователя, который хочет продолжить обучение.
+      <div class="card section-box section-box--accent">
+        <div class="section-title">
+          <h2>Обо мне</h2>
+        </div>
+        <p class="about-text">
+          Здравствуйте! Меня зовут Екатерина, и мне нравится делать процесс обучения захватывающим. Через анализ существующих и поиск новых инструментов я открываю для себя мир методики и новых технологий, который вдохновляет меня двигаться дальше. Верю, что сильный курс начинается с цифр и заканчивается эмоцией пользователя, который хочет продолжить обучение.
         </p>
       </div>
     </section>
 
-    <!-- SKILLS -->
     <section id="skills">
-      <div class="section">
-        <div class="title"><h2>Ключевые компетенции</h2></div>
-        <div class="grid-4">
-          <div class="skill"><b>Педдизайн</b><span>Проектирование программ, треков и&nbsp;практики под&nbsp;цели бизнеса и&nbsp;аудитории</span></div>
-          <div class="skill"><b>Аналитика</b><span>Data-driven подход, оценка качества обучения и&nbsp;улучшение на&nbsp;основе фидбека</span></div>
-          <div class="skill"><b>EdTech / IT</b><span>Образовательные продукты для&nbsp;цифровых команд, внутренних экспертов и&nbsp;студентов</span></div>
-          <div class="skill"><b>Геймификация</b><span>Вовлекающие форматы, интерактивные тексты, механики мотивации и&nbsp;удержания</span></div>
+      <div class="card section-box">
+        <div class="section-title">
+          <h2>Ключевые компетенции</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <strong>Педдизайн</strong>
+            <span>Проектирование программ, треков и практики под цели бизнеса и аудитории</span>
+          </div>
+          <div class="skill-card">
+            <strong>Аналитика</strong>
+            <span>Data-driven подход, оценка качества обучения и улучшение на основе фидбека</span>
+          </div>
+          <div class="skill-card">
+            <strong>EdTech / IT</strong>
+            <span>Образовательные продукты для цифровых команд, внутренних экспертов и студентов</span>
+          </div>
+          <div class="skill-card">
+            <strong>Геймификация</strong>
+            <span>Вовлекающие форматы, интерактивные тексты, механики мотивации и удержания</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CASES (с укороченным списком, как обсуждали) -->
-    <!-- тут можно оставить твои 8 кейсов, я не переписываю их снова, чтобы не сломать структуру; логика та же -->
+    <section id="cases">
+      <div class="card section-box section-box--accent">
+        <div class="section-title">
+          <h2>Избранные кейсы</h2>
+        </div>
 
-    <!-- GALLERY: только рабочие картинки в одну линию -->
+        <div class="cases">
+          <article class="card case">
+            <div class="case__head">
+              <span class="case__tag">1 · Авито</span>
+              <h3>Платформа для культуры обратной связи</h3>
+              <p>Асинхронная образовательная визуальная новелла в LMS для распределённых команд</p>
+            </div>
+            <div class="case__cols">
+              <div class="case__col">
+                <div>
+                  <strong>Контекст и задача</strong>
+                  <p>Поддержать развитие культуры обратной связи в компании с распределёнными командами и разным уровнем вовлечённости.</p>
+                </div>
+                <div>
+                  <strong>Что сделано</strong>
+                  <ul>
+                    <li>Разработана визуальная новелла с сюжетами, близкими к реальным ситуациям сотрудников.</li>
+                    <li>Созданы ветвящиеся сценарии с вариативными исходами.</li>
+                    <li>Встроены задания с автопроверкой и peer-to-peer оценкой.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="case__col">
+                <div>
+                  <strong>Результат работы</strong>
+                  <ul>
+                    <li>Рост понимания принципов конструктивной обратной связи.</li>
+                    <li>Повышение вовлечённости за счёт игрового формата.</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Материалы проекта</strong>
+                  <div class="project-links">
+                    <a href="https://drive.google.com/file/d/1y4aN_w-kioBc-QULQ-KMxOC4UTZ62D9L/view" target="_blank" rel="noopener noreferrer">
+                      Открыть материалы Авито
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card case">
+            <div class="case__head">
+              <span class="case__tag">2 · PET‑проект</span>
+              <h3>«ИИ‑Мастер: 5 шагов к эффективным урокам»</h3>
+              <p>Концепт курса для преподавателей по встроенному использованию ИИ в обучении</p>
+            </div>
+            <div class="case__cols">
+              <div class="case__col">
+                <div>
+                  <strong>Контекст и задача</strong>
+                  <p>Показать преподавателям, как использовать генеративный ИИ не как «магическую кнопку», а как инструмент, встроенный в методику урока.</p>
+                </div>
+                <div>
+                  <strong>Что сделано</strong>
+                  <ul>
+                    <li>Разработана структура из 5 шагов: от постановки цели до рефлексии.</li>
+                    <li>Описаны сценарии использования ИИ на уроке без потери педдизайна.</li>
+                    <li>Собран бриф продукта и визуальная логика курса.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="case__col">
+                <div>
+                  <strong>Материалы проекта</strong>
+                  <div class="project-links">
+                    <a href="https://drive.google.com/file/d/1fVZ_fpFBDoqUVoK_qemfkOe9lYq_lJNp/view" target="_blank" rel="noopener noreferrer">
+                      Открыть бриф продукта
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card case">
+            <div class="case__head">
+              <span class="case__tag">3 · «Оплата труда»</span>
+              <h3>Система измерений для кандидатов в стюарды</h3>
+              <p>Практический курс с формирующими заданиями и обратной связью</p>
+            </div>
+            <div class="case__cols">
+              <div class="case__col">
+                <div>
+                  <strong>Контекст и задача</strong>
+                  <p>Перевести сложную тему оплаты труда из теории в понятную практику с расчётами и применением к реальным сценариям.</p>
+                </div>
+                <div>
+                  <strong>Что сделано</strong>
+                  <ul>
+                    <li>Разработана система из 16 формирующих заданий.</li>
+                    <li>Создан симулятор расчёта зарплаты с мгновенной обратной связью.</li>
+                    <li>Настроены метрики P/D/rpb для оценки качества заданий.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="case__col">
+                <div>
+                  <strong>Результат работы</strong>
+                  <ul>
+                    <li>Участники перестали бояться темы расчётов.</li>
+                    <li>Повысилась точность выполнения заданий по данным симулятора.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card case">
+            <div class="case__head">
+              <span class="case__tag">4 · Возрастная психология</span>
+              <h3>MVP образовательного курса</h3>
+              <p>Онлайн-воркшоп для студентов непрофильных специальностей</p>
+            </div>
+            <div class="case__cols">
+              <div class="case__col">
+                <div>
+                  <strong>Контекст и задача</strong>
+                  <p>Сделать сложную теорию возрастной психологии понятной и применимой для студентов, для которых это не профильная дисциплина.</p>
+                </div>
+                <div>
+                  <strong>Что сделано</strong>
+                  <ul>
+                    <li>Спроектировано 2 модуля с кейс-симуляциями.</li>
+                    <li>Добавлена интерактивная инфографика.</li>
+                    <li>Настроен Telegram-бот для обратной связи.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="case__col">
+                <div>
+                  <strong>Результат работы</strong>
+                  <ul>
+                    <li>92% участников завершили воркшоп.</li>
+                    <li>Студенты отмечали прикладной характер материалов.</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Материалы проекта</strong>
+                  <div class="project-links">
+                    <a href="https://drive.google.com/file/d/1RlTVg0iPfrz9-EwfKKDUnJrHljyCdzfp/view" target="_blank" rel="noopener noreferrer">
+                      Открыть курс
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card case">
+            <div class="case__head">
+              <span class="case__tag">5 · Сбер</span>
+              <h3>Внутренние образовательные продукты и DevRel</h3>
+              <p>Онбординг, GenAI-курс, AI-сообщество, контент и развитие внутренних инициатив</p>
+            </div>
+            <div class="case__cols">
+              <div class="case__col">
+                <div>
+                  <strong>Что делаю</strong>
+                  <ul>
+                    <li>Работаю с внутренними образовательными форматами и программами.</li>
+                    <li>Собираю и развиваю AI-сообщество.</li>
+                    <li>Поддерживаю контентную и методическую часть внутренних продуктов.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="case__col">
+                <div>
+                  <strong>Комментарий</strong>
+                  <p>Материалы этого направления не публикуются, так как относятся к внутренним продуктам.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="gallery">
-      <div class="section">
-        <div class="title"><h2>Изображения и&nbsp;материалы</h2></div>
-        <div class="gallery-grid">
-          <div class="gallery-card">
-            <img src="images/ai-master-1.jpg" alt="Скриншот ИИ‑Мастер: структура модуля" width="1200" height="675" loading="lazy">
-            <div class="cap">«ИИ‑Мастер» — экран курса и&nbsp;логика модуля</div>
-          </div>
-          <div class="gallery-card">
-            <img src="images/ai-master-2.jpg" alt="Фрагмент интерфейса курса ИИ‑Мастер" width="1200" height="675" loading="lazy">
-            <div class="cap">Фрагмент интерфейса курса по встроенному использованию ИИ</div>
-          </div>
-          <div class="gallery-card">
+      <div class="card section-box">
+        <div class="section-title">
+          <h2>Изображения и материалы</h2>
+        </div>
+
+        <div class="gallery-row">
+          <article class="gallery-card">
+            <img src="images/ai-master-1.jpg" alt="ИИ-Мастер — экран курса и логика модуля" width="1200" height="675" loading="lazy">
+            <div class="gallery-card__caption">«ИИ‑Мастер» — экран курса и логика модуля</div>
+          </article>
+
+          <article class="gallery-card">
             <img src="images/diploma.jpg" alt="Диплом победителя" width="1200" height="675" loading="lazy">
-            <div class="cap">Диплом победителя — подтверждение участия и&nbsp;результата</div>
-          </div>
+            <div class="gallery-card__caption">Диплом победителя — подтверждение участия и результата</div>
+          </article>
+
+          <article class="gallery-card">
+            <img src="images/mts-review.jpg" alt="Фрагмент работы с образовательным контентом" width="1200" height="675" loading="lazy">
+            <div class="gallery-card__caption">Фрагмент работы с образовательным контентом и обратной связью</div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- REVIEWS -->
     <section id="reviews">
-      <div class="section accent-section">
-        <div class="title"><h2>Отзывы заказчиков</h2></div>
+      <div class="card section-box section-box--accent">
+        <div class="section-title">
+          <h2>Отзывы заказчиков</h2>
+        </div>
+
         <div class="quotes">
-          <div class="quote">
+          <article class="card quote">
             <p>
-              «Катя сделала для нас исследование конкурентных практик и подробно разложила, как устроены онлайн‑курсы и практика у игроков рынка.
-              Список конкурентов и сравнительная таблица очень помогли при проектировании нашей онлайн‑практики: мы понимали, что уже есть на рынке,
-              и могли принимать более осознанные продуктовые решения.»
+              «Катя сделала для нас исследование конкурентных практик и подробно разложила, как устроены онлайн‑курсы и практика у игроков рынка. Список конкурентов и сравнительная таблица очень помогли при проектировании нашей онлайн‑практики: мы понимали, что уже есть на рынке, и могли принимать более осознанные продуктовые решения.»
             </p>
-            <div class="who">Кирилл Богатырёв, руководитель направления · VK Education</div>
-          </div>
-          <div class="quote">
+            <div class="quote__author">Кирилл Богатырёв, руководитель направления · VK Education</div>
+          </article>
+
+          <article class="card quote">
             <p>
-              «Катя показала высокий уровень ответственности и внимательности. Она аккуратно работала с контентом,
-              вовремя задавала уточняющие вопросы и предлагала улучшения по структуре и формулировкам.
-              В результате курс стал понятнее для студентов, а мы получили качественный контент в срок.»
+              «Катя показала высокий уровень ответственности и внимательности. Она аккуратно работала с контентом, вовремя задавала уточняющие вопросы и предлагала улучшения по структуре и формулировкам. В результате курс стал понятнее для студентов, а мы получили качественный контент в срок.»
             </p>
-            <div class="who">Альбина Гарифуллина, руководитель направления · МТС Диджитал</div>
-          </div>
-          <div class="quote">
+            <div class="quote__author">Альбина Гарифуллина, руководитель направления · МТС Диджитал</div>
+          </article>
+
+          <article class="card quote">
             <p>
-              «Ключевая фишка проекта — перевод скучной темы оплаты труда в интерактивные расчёты и понятные задания.
-              Благодаря симулятору и системе формирующих заданий участники наконец-то начали разбираться в теме,
-              а не просто запоминать формулы.»
+              «Ключевая фишка проекта — перевод скучной темы оплаты труда в интерактивные расчёты и понятные задания. Благодаря симулято��у и системе формирующих заданий участники наконец-то начали разбираться в теме, а не просто запоминать формулы.»
             </p>
-            <div class="who">Заказчик курса «Оплата труда» · корпоративный образовательный проект</div>
-          </div>
+            <div class="quote__author">Заказчик курса «Оплата труда» · корпоративный образовательный проект</div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section id="experience">
-      <div class="section">
-        <div class="title"><h2>Опыт и&nbsp;образование</h2></div>
+      <div class="card section-box">
+        <div class="section-title">
+          <h2>Опыт и образование</h2>
+        </div>
+
         <div class="timeline">
-          <div class="item">
-            <b>Сбер · DevRel</b>
+          <article class="timeline-item">
+            <strong>Сбер · DevRel</strong>
             <span>Январь 2026 — настоящее время</span>
-            <div class="muted">Онбординг, GenAI‑курс, AI‑сообщество, контент‑редакция, AI‑агент</div>
-          </div>
-          <div class="item">
-            <b>МТС Диджитал · Методист</b>
+            <p>Онбординг, GenAI‑курс, AI‑сообщество, контент‑редакция, AI‑агент.</p>
+          </article>
+
+          <article class="timeline-item">
+            <strong>МТС Диджитал · Методист</strong>
             <span>Февраль 2025 — Май 2025</span>
-            <div class="muted">Вычитка курсов, трек, практики, лицензирование</div>
-          </div>
-          <div class="item">
-            <b>VK · Аналитик</b>
+            <p>Вычитка курсов, трек, практики, лицензирование.</p>
+          </article>
+
+          <article class="timeline-item">
+            <strong>VK · Аналитик</strong>
             <span>Октябрь 2024 — Декабрь 2024</span>
-            <div class="muted">Исследование EdTech‑рынка и&nbsp;аудитории</div>
-          </div>
-          <div class="item">
-            <b>Образование</b>
+            <p>Исследование EdTech-рынка и аудитории.</p>
+          </article>
+
+          <article class="timeline-item">
+            <strong>Образование</strong>
             <span>НИУ ВШЭ · Педагогический дизайн<br>МПГУ · Филолог</span>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- RESUME -->
     <section id="resume">
-      <div class="section">
-        <div class="panel resume-panel">
-          <div class="title"><h2>Резюме</h2></div>
-          <p class="muted">
-            Здесь можно открыть PDF‑версию резюме в&nbsp;новой вкладке.
+      <div class="card section-box">
+        <div class="contact-card contact-card--resume card">
+          <div class="section-title">
+            <h2>Резюме</h2>
+          </div>
+          <p class="about-text" style="color: var(--muted);">
+            Здесь можно открыть PDF‑версию резюме в новой вкладке.
           </p>
-          <div class="cta" style="margin-top:16px;">
-            <a class="btn primary" href="resume.pdf" target="_blank" rel="noopener noreferrer" type="application/pdf">
+          <div class="hero__actions" style="margin-top: 16px;">
+            <a class="btn btn--primary" href="resume.pdf" target="_blank" rel="noopener noreferrer">
               Открыть резюме (PDF)
             </a>
           </div>
@@ -989,22 +1135,28 @@
       </div>
     </section>
 
-    <!-- CONTACTS -->
     <section id="contacts">
-      <div class="section contact accent-section">
-        <div class="panel">
-          <h2 style="margin-top:0;color:var(--accent-deep);">Контакты</h2>
-          <p class="muted">Открыта к&nbsp;проектной, частичной и&nbsp;гибридной занятости в&nbsp;Москве</p>
-          <div class="links">
-            <a href="mailto:kapitanEka@yandex.ru">kapitanEka@yandex.ru</a>
-            <a href="https://t.me/smitherg" target="_blank" rel="noopener noreferrer">Telegram: @smitherg</a>
-            <a href="tel:+79162828292">+7 (916) 282-82-92</a>
+      <div class="card section-box section-box--accent">
+        <div class="contacts">
+          <div class="contact-card card">
+            <h2>Контакты</h2>
+            <p style="margin: 0; color: var(--muted);">
+              Открыта к проектной, частичной и гибридной занятости в Москве
+            </p>
+
+            <div class="contact-links">
+              <a href="mailto:kapitanEka@yandex.ru">kapitanEka@yandex.ru</a>
+              <a href="https://t.me/smitherg" target="_blank" rel="noopener noreferrer">Telegram: @smitherg</a>
+              <a href="tel:+79162828292">+7 (916) 282-82-92</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="wrap footer">© Екатерина Гитт · Портфолио</div>
+  <footer class="container footer">
+    © Екатерина Гитт · Портфолио
+  </footer>
 </body>
 </html>
